@@ -67,6 +67,8 @@ We will have ONE single Topic that everyone listen to for announcement!
 
 ![Broker Env](images/msgenv.png)
 
+
+
 ## Working with GUI
 
 ![Working with GUI](images/gui.png)
@@ -119,7 +121,12 @@ or
 
 Publishing and receiving from announcement topic!
 
-Announcement Topic Datashape: 
+- Add connection for messaging broker for Input queue and announcement topic
+(TBA) Screen Shoot
+
+- Add new integration
+
+- From internalbroker connection with following datashapes
 
 ```
 {
@@ -128,8 +135,42 @@ Announcement Topic Datashape:
 }
 ```
 
+- Data Mapper 
+
+(TBA) Screen Shoot
+
+- To externalbroker connection with following datashapes
+
+```
+{
+  "username":"accouncement",
+  "content": "this is the message for everyone!!"
+}
+```
+
+
+
+
 
 ![Working with GUI](images/hack-01-02.png)
+
+
+- Add new integration
+
+- From externalbroker connection with following datashapes
+
+```
+{
+  "username":"accouncement",
+  "content": "this is the message for everyone!!"
+}
+```
+
+- Data Mapper 
+
+(TBA) Screen Shoot
+
+- To internalbroker connection with following datashapes
 
 ```
 {
@@ -139,11 +180,12 @@ Announcement Topic Datashape:
 }
 ```
 
+
 ## Second Hack
 (Instructor lead)
 Showing all ATM locations
 
 
 
-## Off you go! 
+## Off you go 
 Have fun Hacking!
