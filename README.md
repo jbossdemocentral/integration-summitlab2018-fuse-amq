@@ -102,12 +102,12 @@ or
 
 ```
 {
-	"type":"forSurroundingATM",
-	"Content":[
-		{ "bankid":"",
-		  "location": {"lng":3.444,"lat":6.643}
-		}
-	]
+  "type":"forSurroundingATM",
+  "Content":[
+    { "bankid":"",
+	   "location": {"lng":3.444,"lat":6.643}
+	 }
+  ]
 }
 ```
 
