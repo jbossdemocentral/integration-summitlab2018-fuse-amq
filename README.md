@@ -68,8 +68,48 @@ We will have ONE single Topic that everyone listen to for announcement!
 ![Broker Env](images/msgenv.png)
 
 ## Working with GUI
+
 ![Working with GUI](images/gui.png)
 
+### Communicating to Display Panel 
+To display messages in the display panel, you will need to send the text into the receiving messaging broker queue. And you will need to follow the data format listed below: 
+
+```
+{
+"Color":"red",
+"Content":"this is the message for everyone!!"
+}
+```
+
+
+### Showing location in Map
+Map allows you to ping point and mark multiple locations, the location can be set by passing into a messaging broker queue with the data format below:
+
+### Showing route in Map
+To add route in the map, simply pass in the route data below into a messaging broker queue:
+
+### Data from Input
+Inputs are collected and formatted into a messaging broker queue ready for you to process after submitting it with the submit button. An example of the data is show below:
+
+```
+{
+"type":"accouncement",
+"content": [{"this is the message for everyone!!"}]
+}
+```
+
+or 
+
+```
+{
+	"type":"forSurroundingATM",
+	"Content":[
+					{ "bankid":"",
+					  "location": {"lng":3.444,"lat":6.643}
+					}
+				]
+}
+```
 
 ## First Hack 
 (Instructor lead)
