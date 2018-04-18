@@ -120,8 +120,8 @@ Announcement Topic Datashape:
 
 ```
 {
-"Color":"red",
-"Content":"this is the message for everyone!!"
+  "Color":"red",
+  "Content":"this is the message for everyone!!"
 }
 ```
 
