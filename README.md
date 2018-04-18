@@ -76,8 +76,9 @@ To display messages in the display panel, you will need to send the text into th
 
 ```
 {
-"Color":"red",
-"Content":"this is the message for everyone!!"
+  "Color":"red",
+  "UserName":"Christina",
+  "Content":"this is the message for everyone!!"
 }
 ```
 
@@ -111,8 +112,10 @@ or
 }
 ```
 
-## First Hack 
-(Instructor lead)
+## First Hack - Data Shapes and Data Mapper
+-Instructor lead-
+
+![Working with GUI](images/hack-01-01.png)
 
 Publishing and receiving from announcement topic!
 
@@ -120,12 +123,21 @@ Announcement Topic Datashape:
 
 ```
 {
-  "Color":"red",
-  "Content":"this is the message for everyone!!"
+  "type":"accouncement",
+  "content": [{"this is the message for everyone!!"}]
 }
 ```
 
 
+![Working with GUI](images/hack-01-02.png)
+
+```
+{
+  "Color":"red",
+  "UserName":"Christina",
+  "Content":"this is the message for everyone!!"
+}
+```
 
 ## Second Hack
 (Instructor lead)
