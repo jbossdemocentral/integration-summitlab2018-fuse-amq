@@ -93,8 +93,8 @@ Inputs are collected and formatted into a messaging broker queue ready for you t
 
 ```
 {
-"type":"accouncement",
-"content": [{"this is the message for everyone!!"}]
+  "type":"accouncement",
+  "content": [{"this is the message for everyone!!"}]
 }
 ```
 
@@ -104,10 +104,10 @@ or
 {
 	"type":"forSurroundingATM",
 	"Content":[
-					{ "bankid":"",
-					  "location": {"lng":3.444,"lat":6.643}
-					}
-				]
+		{ "bankid":"",
+		  "location": {"lng":3.444,"lat":6.643}
+		}
+	]
 }
 ```
 
