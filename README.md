@@ -182,10 +182,46 @@ Publishing and receiving from announcement topic!
 
 
 ## Second Hack
-(Instructor lead)
-Showing all ATM locations
+
+-Instructor lead-
+
+Showing all ATM locations that is my prefered bank and has less then rate
 
 ![Second Hack](images/hack-02-01.png)
+
+
+- Add connection for messaging broker for Input queue if you have not done so from the previous hack
+
+- Add API swagger to create API 
+
+- Add Tech Extension  
+ 
+- Add connection for API and Tech Extension 
+
+- Add new integration
+
+- From internalbroker connection with following datashapes
+
+```
+{
+  "type":"accouncement",
+  "content": [{"this is the message for everyone!!"}]
+}
+```
+
+- Data Mapper 
+
+(TBA) Screen Shoot
+
+- To externalbroker connection with following datashapes
+
+```
+{
+  "username":"accouncement",
+  "content": "this is the message for everyone!!"
+}
+```
+
 
 ## Off you go 
 Have fun Hacking!
