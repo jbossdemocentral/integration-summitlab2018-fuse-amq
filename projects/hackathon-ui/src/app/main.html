@@ -1,21 +1,23 @@
 <main-notification-list></main-notification-list>
 <patternfly-header></patternfly-header>
-<div class="container-fluid">
-  <main class="main">
-    <div class="row">
-      <div class="col-12">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Map View</h3>
-          </div>
-          <div class="panel-body" ng-controller="LeafletController">
-            <leaflet markers="markers" event-broadcast="events" width="100%" height="380px" center="london"></leaflet>
-          </div>
-        </div>
-      </div>
+<div class="container-fluid container-cards-pf">
+  <div class="row row-cards-pf">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+      <mapbox></mapbox>
     </div>
-    <!-- <fountain-title></fountain-title>
-    <fountain-techs></fountain-techs> -->
-  </main>
-  <fountain-footer></fountain-footer>
+  </div>
+  <div class="row row-cards-pf">
+    <div class="col-xs-12 col-sm-6 col-md-6">
+      <location-details></location-details>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-6">
+      <input-form></input-form>
+    </div>
+  </div>
+  <div class="row row-cards-pf">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+      <recent-information></recent-information>
+    </div>
+  </div>
 </div>
+<fountain-footer></fountain-footer>

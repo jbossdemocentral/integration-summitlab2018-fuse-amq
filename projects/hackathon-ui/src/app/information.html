@@ -1,0 +1,19 @@
+<div ng-controller="InformationController">
+    <label class="label-title">Latest Comments on Location:</label>
+    <pf-list-view items="listitems" config="listconfig">
+        <div class="list-view-pf-left">
+            <span class="{{item.typeIcon}} list-view-pf-icon-sm"></span>
+        </div>
+        <div class="list-view-pf-body">
+            <div class="list-view-pf-description">
+                <div class="list-group-item-heading">
+                    {{item.name}}
+                </div>
+                <div class="list-group-item-text">
+                    The following snippet of text is
+                    <a href="#/{{item.name}}">rendered as link text</a>.
+                </div>
+            </div>
+        </div>
+    </pf-list-view>
+</div>

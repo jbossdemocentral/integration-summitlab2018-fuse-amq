@@ -1,8 +1,11 @@
 angular
   .module('app', [
     'ui.router',
+    'patternfly.card',
+    'patternfly.form',
     'patternfly.navigation',
     'patternfly.notification',
+    'patternfly.views',
     'leaflet-directive']);
 
 angular
