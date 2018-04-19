@@ -51,7 +51,7 @@ More details to come!  (DISCUSSION: Do we set this up for audience or they do it
 
 
 
-![Lab Environment](images/labenv.png)
+![Lab Environment](docs/images/labenv.png)
 
 
 ### Deployment on AMQ Online
@@ -65,13 +65,13 @@ We will have ONE single Topic that everyone listen to for announcement!
 - 3 queues in case the participants needs it, __temp queues__
 
 
-![Broker Env](images/msgenv.png)
+![Broker Env](docs/images/msgenv.png)
 
 
 
 ## Working with GUI
 
-![Working with GUI](images/gui.png)
+![Working with GUI](docs/images/gui.png)
 
 ### Communicating to Display Panel 
 To display messages in the display panel, you will need to send the text into the receiving messaging broker queue. And you will need to follow the data format listed below: 
@@ -117,7 +117,7 @@ or
 ## First Hack - Data Shapes and Data Mapper
 -Instructor lead-
 
-![Working with GUI](images/hack-01-01.png)
+![Working with GUI](docs/images/hack-01-01.png)
 
 Publishing and receiving from announcement topic!
 
@@ -152,7 +152,7 @@ Publishing and receiving from announcement topic!
 
 
 
-![Working with GUI](images/hack-01-02.png)
+![Working with GUI](docs/images/hack-01-02.png)
 
 
 - Add new integration
@@ -187,7 +187,7 @@ Publishing and receiving from announcement topic!
 
 Showing all ATM locations that is my prefered bank and has less then rate
 
-![Second Hack](images/hack-02-01.png)
+![Second Hack](docs/images/hack-02-01.png)
 
 
 - Add connection for messaging broker for Input queue if you have not done so from the previous hack
