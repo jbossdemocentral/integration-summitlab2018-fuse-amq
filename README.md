@@ -73,20 +73,50 @@ We will have ONE single Topic that everyone listen to for announcement!
 
 ![Working with GUI](docs/images/gui.png)
 
-### Communicating to Display Panel 
-To display messages in the display panel, you will need to send the text into the receiving messaging broker queue. And you will need to follow the data format listed below: 
+### Communicating with the Notifications Display 
+To display messages in the notifications widget, you will need to send the text into the receiving message broker topic. And you will need to follow the data format listed below: 
 
 ```
 {
-  "Color":"red",
-  "UserName":"Christina",
-  "Content":"this is the message for everyone!!"
+  type: 'Success',
+  header: 'Christina',
+  message: 'This is the message for <strong>everyone</strong>!!'
 }
 ```
 
+Message body allows non-abusive use of HTML. You can use one of the following message types:
+
+* Info
+* Success
+* Warning
+* Danger
+
 
 ### Showing location in Map
-Map allows you to ping point and mark multiple locations, the location can be set by passing into a messaging broker queue with the data format below:
+Map allows you to pin point and mark multiple locations, the location can be set by passing into the receiving message broker queue with the data format below:
+
+````
+[
+  {
+    location: {
+      lat: 37.784323,
+      lng: -122.40069
+    },
+    title: 'Moscone Center',
+    type: 'Point of Interest',
+    id: 109
+  },
+  {
+    location: {
+      lat: 37.785905,
+      lng: -122.413022
+    },
+    title: 'Hilton Union Square',
+    type: 'Hotel',
+    id: 203
+  }
+]
+````
 
 ### Showing route in Map
 To add route in the map, simply pass in the route data below into a messaging broker queue:
@@ -96,8 +126,11 @@ Inputs are collected and formatted into a messaging broker queue ready for you t
 
 ```
 {
-  "type":"accouncement",
-  "content": [{"this is the message for everyone!!"}]
+  type: 'announcement',
+  content: {
+    title: 'Tester',
+    text: 'This is the message for everyone!!'
+  }
 }
 ```
 
@@ -105,12 +138,12 @@ or
 
 ```
 {
-  "type":"forSurroundingATM",
-  "Content":[
-    { "bankid":"",
-	   "location": {"lng":3.444,"lat":6.643}
+  type: 'forLocation',
+  content: {
+      id: '109',
+	    title: 'Comment',
+      text: 'Here's a comment'
 	 }
-  ]
 }
 ```
 

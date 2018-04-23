@@ -11,8 +11,7 @@ angular
       return Locations.selected;
     }, function (newVal) {
       angular.extend($scope, {
-        site: Locations.selected
+        site: newVal
       });
-      console.log(newVal);
     });
   }]);

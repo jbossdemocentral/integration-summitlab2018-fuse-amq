@@ -9,7 +9,7 @@ angular
   .controller('NotificationListController', ['$window', '$scope', '$rootScope', 'Notifications', function ($window, $scope, $rootScope, Notifications) {
     var vm = this;
     vm.showClose = true;
-    vm.htmlContent = false;
+    vm.htmlContent = true;
     vm.persistent = false;
     vm.showMenu = false;
 
@@ -25,7 +25,7 @@ angular
     vm.types = Object.keys(typeMap);
 
     vm.type = vm.types[0];
-    vm.header = 'Default header.';
+    vm.header = 'User:';
     vm.message = 'Default <strong>notification</strong> message.';
 
     vm.handleClose = handleClose;
@@ -43,8 +43,8 @@ angular
       receiver.on('message', function (context) {
         var notification = context.message.body;
         Notifications.message(
-          notification.type ? notification.type : typeMap[vm.type],
-          notification.header ? notification.header : vm.header,
+          typeMap[notification.type] ? typeMap[notification.type] : typeMap[vm.type],
+          notification.header ? notification.header + ':' : vm.header,
           notification.message ? notification.message : vm.message,
           vm.persistent,
           handleClose,

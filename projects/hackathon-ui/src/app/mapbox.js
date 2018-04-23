@@ -6,41 +6,56 @@ angular
 
 angular
   .module('app').controller('LeafletController', ['$window', '$scope', '$log', 'Locations', function ($window, $scope, $log, Locations) {
-    var mainMarker = {
-      lat: 51,
-      lng: 0,
-      focus: true,
-      title: 'London',
-      message: 'Hey, drag me if you want',
-      draggable: false,
-      riseOnHover: true
+    var moscone = {
+      location: {
+        lat: 37.784323,
+        lng: -122.40069,
+        message: 'Moscone Center',
+        draggable: false,
+        riseOnHover: true
+      },
+      title: 'Moscone Center',
+      type: 'Point of Interest',
+      comments: []
     };
 
     angular.extend($scope, {
-      london: {
-        lat: 51.505,
-        lng: -0.09,
-        zoom: 8
+      moscone: {
+        lat: 37.784323,
+        lng: -122.40069,
+        zoom: 12
       },
+      maxbounds: {},
       markers: {
-        '0': angular.copy(mainMarker)
-      },
-      position: {
-        lat: 51,
-        lng: 0
+        0: angular.copy(moscone.location)
       },
       events: {
         markers: {
           enable: ['click']
         }
+      },
+      tiles: {
+        url: 'https://api.mapbox.com/v4/{mapid}/{z}/{x}/{y}.png?access_token={apikey}',
+        type: 'xyz',
+        options: {
+          apikey: 'pk.eyJ1IjoiaGd1ZXJyZXJvbyIsImEiOiJjamdjbWx2Nm0xazl2MndvNDhiYmZ5MDI0In0.AdSTbfPP_0C0u5rkjDD7AA',
+          mapid: 'mapbox.streets'
+        }
+      },
+      defaults: {
+        scrollWheelZoom: false
       }
     });
 
-    var vm = this;
+    Locations.locations.push(moscone);
 
     $scope.$on('leafletDirectiveMarker.canvasMap.click', function (event, args) {
-      Locations.selected = Locations.locations[args.modelName];
-      $log.info('marker:' + Locations.selected.message);
+      var location = Locations.locations[args.modelName];
+      if (angular.isUndefined(location.comments)) {
+        location.comments = [];
+      }
+      Locations.selected = location;
+      $log.info('marker:' + Locations.selected.title);
     });
 
     var connection = $window.connection;
@@ -52,9 +67,19 @@ angular
 
       receiver.on('message', function (context) {
         Locations.locations = context.message.body;
-        angular.extend($scope, {
-          markers: Locations.locations.map(a => a.location)
+        var mapLocations = Locations.locations.map(a => {
+          return {
+            lat: a.location.lat,
+            lng: a.location.lng,
+            title: a.title,
+            message: a.title,
+            draggable: false
+          };
         });
+        angular.extend($scope, {
+          markers: mapLocations
+        });
+        $scope.$apply();
       });
     }
   }]);
