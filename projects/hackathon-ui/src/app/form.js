@@ -6,14 +6,14 @@ angular
 
 angular
   .module('app')
-  .directive('selectpicker', [function() {
+  .directive('selectpicker', [function () {
     return {
-       restrict: 'A',
-       link: function(scope, elem, attrs) {
-          $(elem).selectpicker();
-       }
+      restrict: 'A',
+      link: function (scope, elem) {
+        angular.element(elem).selectpicker();
+      }
     };
- }]);
+  }]);
 
 angular
   .module('app')
