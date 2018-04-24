@@ -92,7 +92,11 @@ Message body allows non-abusive use of HTML. You can use one of the following me
 * Danger
 
 
+<<<<<<< HEAD
 ### Showing Locations in the Map
+=======
+### Showing location in Map
+>>>>>>> 1d5f3f375878fa80f13844cf213ab971a672cc8d
 Map allows you to pin point and mark multiple locations, the location can be set by passing into the receiving message broker queue with the data format below:
 
 ````
@@ -140,10 +144,17 @@ or
 {
   type: 'forLocation',
   content: {
+<<<<<<< HEAD
     id: '109',
     title: 'Comment',
     text: 'Here's a comment'
   }
+=======
+      id: '109',
+	    title: 'Comment',
+      text: 'Here's a comment'
+	 }
+>>>>>>> 1d5f3f375878fa80f13844cf213ab971a672cc8d
 }
 ```
 
