@@ -21,6 +21,7 @@ Go to the following links to access  (login with your user id/pwd)
 - Parking locations (TBA)
 - ER/Hospital Locations (TBA)
 - Landmarks Locations (TBA)
+- Airbnb Locations (TBA)
 
 
 
