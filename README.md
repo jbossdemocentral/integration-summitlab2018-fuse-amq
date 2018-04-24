@@ -144,23 +144,10 @@ or
 {
   type: 'forLocation',
   content: {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 0b823a17f4c0b3e7b3227f24ffeba76cfde5f290
     id: '109',
     title: 'Comment',
     text: 'Here's a comment'
   }
-<<<<<<< HEAD
-=======
-=======
-      id: '109',
-	    title: 'Comment',
-      text: 'Here's a comment'
-	 }
->>>>>>> 1d5f3f375878fa80f13844cf213ab971a672cc8d
->>>>>>> 0b823a17f4c0b3e7b3227f24ffeba76cfde5f290
 }
 ```
 
