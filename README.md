@@ -52,7 +52,7 @@ More details to come!  (DISCUSSION: Do we set this up for audience or they do it
 
 
 
-![Lab Environment](images/labenv.png)
+![Lab Environment](docs/images/labenv.png)
 
 
 ### Deployment on AMQ Online
@@ -66,28 +66,58 @@ We will have ONE single Topic that everyone listen to for announcement!
 - 3 queues in case the participants needs it, __temp queues__
 
 
-![Broker Env](images/msgenv.png)
+![Broker Env](docs/images/msgenv.png)
 
 
 
 ## Working with GUI
 
-![Working with GUI](images/gui.png)
+![Working with GUI](docs/images/gui.png)
 
-### Communicating to Display Panel 
-To display messages in the display panel, you will need to send the text into the receiving messaging broker queue. And you will need to follow the data format listed below: 
+### Communicating with the Notifications Display 
+To display messages in the notifications widget, you will need to send the text into the receiving message broker topic. And you will need to follow the data format listed below: 
 
 ```
 {
-  "Color":"red",
-  "UserName":"Christina",
-  "Content":"this is the message for everyone!!"
+  type: 'Success',
+  header: 'Christina',
+  message: 'This is the message for <strong>everyone</strong>!!'
 }
 ```
 
+Message body allows non-abusive use of HTML. You can use one of the following message types:
 
-### Showing location in Map
-Map allows you to ping point and mark multiple locations, the location can be set by passing into a messaging broker queue with the data format below:
+* Info
+* Success
+* Warning
+* Danger
+
+
+### Showing Locations in the Map
+Map allows you to pin point and mark multiple locations, the location can be set by passing into the receiving message broker queue with the data format below:
+
+````
+[
+  {
+    location: {
+      lat: 37.784323,
+      lng: -122.40069
+    },
+    title: 'Moscone Center',
+    type: 'Point of Interest',
+    id: 109
+  },
+  {
+    location: {
+      lat: 37.785905,
+      lng: -122.413022
+    },
+    title: 'Hilton Union Square',
+    type: 'Hotel',
+    id: 203
+  }
+]
+````
 
 ### Showing route in Map
 To add route in the map, simply pass in the route data below into a messaging broker queue:
@@ -97,8 +127,11 @@ Inputs are collected and formatted into a messaging broker queue ready for you t
 
 ```
 {
-  "type":"accouncement",
-  "content": [{"this is the message for everyone!!"}]
+  type: 'announcement',
+  content: {
+    title: 'Tester',
+    text: 'This is the message for everyone!!'
+  }
 }
 ```
 
@@ -106,19 +139,19 @@ or
 
 ```
 {
-  "type":"forSurroundingATM",
-  "Content":[
-    { "bankid":"",
-	   "location": {"lng":3.444,"lat":6.643}
-	 }
-  ]
+  type: 'forLocation',
+  content: {
+    id: '109',
+    title: 'Comment',
+    text: 'Here's a comment'
+  }
 }
 ```
 
 ## First Hack - Data Shapes and Data Mapper
 -Instructor lead-
 
-![Working with GUI](images/hack-01-01.png)
+![Working with GUI](docs/images/hack-01-01.png)
 
 Publishing and receiving from announcement topic!
 
@@ -153,7 +186,7 @@ Publishing and receiving from announcement topic!
 
 
 
-![Working with GUI](images/hack-01-02.png)
+![Working with GUI](docs/images/hack-01-02.png)
 
 
 - Add new integration
@@ -188,7 +221,7 @@ Publishing and receiving from announcement topic!
 
 Showing all ATM locations that is my prefered bank and has less then rate
 
-![Second Hack](images/hack-02-01.png)
+![Second Hack](docs/images/hack-02-01.png)
 
 
 - Add connection for messaging broker for Input queue if you have not done so from the previous hack
