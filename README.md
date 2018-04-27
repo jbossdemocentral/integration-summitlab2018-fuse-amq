@@ -16,12 +16,13 @@ What is the fun of integration if you don’t have API/data?
 
 Go to the following links to access  (login with your user id/pwd)
 
-- Restaurant/BAR Locations (TBA)
-- ATM Locations (TBA)
-- Parking locations (TBA)
-- ER/Hospital Locations (TBA)
-- Landmarks Locations (TBA)
+- **Restaurant Locations** d2b8f9e059c2bbfc1a5c7b1cb8115d60
+- **ATM Locations**  b88456bf863608f5b79324eae13a4e46
+- **Parking locations** 73917fb7c1c8d7142a5db4d6f0ec4a97
+- **Bar locations**  f6ba725532f6797d5dc7afbf8c012c20
+- **Store locations** b62940ff7a175691e0396b28ceaa0bf4
 
+https://fusedemo.3scale.net/docs
 
 
 ### Schema in Database: (TBC)
@@ -218,7 +219,7 @@ Publishing and receiving from announcement topic!
 
 -Instructor lead-
 
-Showing all ATM locations that is my prefered bank and has less then rate
+Showing all Parking locations has the most cheap rate
 
 ![Second Hack](docs/images/hack-02-01.png)
 
@@ -233,7 +234,7 @@ Showing all ATM locations that is my prefered bank and has less then rate
 
 - Add new integration
 
-- From internalbroker connection with following datashapes
+- From broker connection with following datashapes
 
 ```
 {
