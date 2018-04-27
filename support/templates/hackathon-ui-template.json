@@ -1,0 +1,219 @@
+{
+    "kind": "Template",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "hackathon-ui",
+        "annotations": {
+            "iconClass": "icon-nodejs",
+            "description": "Application template for the Web Application"
+        }
+    },
+    "labels": {
+       "app": "hackathon-ui",
+       "createdBy": "hackathon-ui-template"
+    },
+    "parameters": [
+        {
+           "description": "Github trigger secret",
+           "name": "GITHUB_TRIGGER_SECRET",
+           "from": "[a-zA-Z0-9]{8}",
+           "generate": "expression",
+           "required": true
+        },
+        {
+            "description": "Github trigger secret",
+            "name": "GENERIC_TRIGGER_SECRET",
+            "from": "[a-zA-Z0-9]{8}",
+            "generate": "expression",
+            "required": true
+        }
+     ],
+    "objects": [
+        {
+            "kind": "BuildConfig",
+            "apiVersion": "v1",
+            "metadata": {
+               "name": "hackathon-ui",
+               "labels": {
+                  "app": "hackathon-ui"
+               }
+            },
+            "spec": {
+               "source": {
+                  "type": "Git",
+                  "git": {
+                     "uri": "https://github.com/weimeilin79/summitlab2018.git",
+                     "ref": "master"
+                  },
+                  "contextDir":"/projects/hackathon-ui"
+               },
+               "strategy": {
+                  "type": "Source",
+                  "sourceStrategy": {
+                     "from": {
+                        "kind": "ImageStreamTag",
+                        "namespace": "openshift",
+                        "name": "nodejs:6"
+                     }
+                  }
+               },
+               "output": {
+                  "to": {
+                     "kind": "ImageStreamTag",
+                     "name": "hackathon-ui:latest"
+                  }
+               },
+               "triggers": [
+                  {
+                     "type": "GitHub",
+                     "github": {
+                        "secret": "${GITHUB_TRIGGER_SECRET}"
+                     }
+                  },
+                  {
+                     "type": "Generic",
+                     "generic": {
+                        "secret": "${GENERIC_TRIGGER_SECRET}"
+                     }
+                  },
+                  {
+                     "type": "ImageChange"
+                  },
+                  {
+                     "type": "ConfigChange"
+                  }
+               ]
+            }
+         },
+         {
+            "kind": "ImageStream",
+            "apiVersion": "v1",
+            "metadata": {
+               "name": "hackathon-ui",
+               "labels": {
+                  "app": "hackathon-ui"
+               }
+            },
+            "spec": {
+               "dockerImageRepository": "",
+               "tags": [
+                  {
+                     "name": "latest"
+                  }
+               ]
+            }
+         },
+         {
+            "kind": "DeploymentConfig",
+            "apiVersion": "v1",
+            "metadata": {
+               "name": "hackathon-ui",
+               "labels": {
+                  "deploymentConfig": "hackathon-ui",
+                  "app": "hackathon-ui"
+               }
+            },
+            "spec": {
+               "replicas": 1,
+               "selector": {
+                  "deploymentConfig": "hackathon-ui"
+               },
+               "strategy": {
+                  "type": "Rolling"
+               },
+               "template": {
+                  "metadata": {
+                     "labels": {
+                        "deploymentConfig": "hackathon-ui",
+                        "app": "hackathon-ui"
+                     },
+                     "name": "hackathon-ui"
+                  },
+                  "spec": {
+                     "containers": [
+                        {
+                           "name": "hackathon-ui",
+                           "image": "hackathon-ui",
+                           "imagePullPolicy": "Always",
+                           "env": [],
+                           "ports": [
+                              {
+                                 "name": "hackathonui-http",
+                                 "containerPort": 8080,
+                                 "protocol": "TCP"
+                              }
+                           ],
+                           "resources": {},
+                           "terminationMessagePath": "/dev/termination-log",
+                           "securityContext": {}
+                        }
+                     ],
+                     "restartPolicy": "Always",
+                     "dnsPolicy": "ClusterFirst"
+                  }
+               },
+               "triggers": [
+                  {
+                     "type": "ImageChange",
+                     "imageChangeParams": {
+                        "automatic": true,
+                        "containerNames": [
+                           "hackathon-ui"
+                        ],
+                        "from": {
+                           "kind": "ImageStreamTag",
+                           "name": "hackathon-ui:latest"
+                        }
+                     }
+                  },
+                  {
+                     "type": "ConfigChange"
+                  }
+               ]
+            }
+         },
+         {
+            "kind": "Service",
+            "apiVersion": "v1",
+            "metadata": {
+               "name": "hackathon-ui-http",
+               "labels": {
+                  "app": "hackathon-ui"
+               },
+               "annotations": {
+                  "description": "The web server's http port"
+               }
+            },
+            "spec": {
+               "ports": [
+                  {
+                     "port": 8080,
+                     "targetPort": 8080
+                  }
+               ],
+               "selector": {
+                  "deploymentConfig": "hackathon-ui"
+               }
+            }
+         },
+         {
+            "kind": "Route",
+            "apiVersion": "v1",
+            "metadata": {
+               "name": "hackathon-ui-http-route",
+               "labels": {
+                  "app": "hackathon-ui"
+               },
+               "annotations": {
+                  "description": "Route for application's http service"
+               }
+            },
+            "spec": {
+               "to": {
+                  "kind": "Service",
+                  "name": "hackathon-ui-http"
+               }
+            }
+         }        
+    ]
+ }
