@@ -3,9 +3,13 @@ info:
   title: San Fransico ATM Location Service
   description: 2018 Summit Lab - ATM Location Service
   version: 1.0.0
-host: sfatmlocation-2445581558442.production.gw.apicast.io
+host: sfatmlocation-2445581558442.production.gw.apicast.io:443
 schemes:
   - https
+consumes:
+  - application/json
+produces:
+  - application/json
 paths:
   /sflocation/atm/all/:
     get:
