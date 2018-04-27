@@ -219,7 +219,7 @@ Publishing and receiving from announcement topic!
 
 -Instructor lead-
 
-Showing all ATM locations that is my prefered bank and has less then rate
+Showing all Parking locations has the most cheap rate
 
 ![Second Hack](docs/images/hack-02-01.png)
 
@@ -234,7 +234,7 @@ Showing all ATM locations that is my prefered bank and has less then rate
 
 - Add new integration
 
-- From internalbroker connection with following datashapes
+- From broker connection with following datashapes
 
 ```
 {
