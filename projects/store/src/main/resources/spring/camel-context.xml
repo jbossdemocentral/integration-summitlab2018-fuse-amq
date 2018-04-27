@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring       http://camel.apache.org/schema/spring/camel-spring.xsd">
     <camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
         <restConfiguration apiContextPath="api-docs" bindingMode="auto"
-            component="undertow" contextPath="/myservice"
+            component="undertow" contextPath="/sflocation"
             enableCORS="true" port="8080">
             <apiProperty key="cors" value="true"/>
             <apiProperty key="api.title" value="Summit all resturant locations"/>
@@ -18,7 +18,6 @@
                 <description> Store Info by store type</description>
                 <to uri="direct:getStore"/>
             </get>
-            
         </rest>
         <route id="all-route">
             <from id="_direct1" uri="direct:getAll"/>
@@ -36,6 +35,5 @@
             </marshal>
             <log id="_log2" message="${body}"/>
         </route>
-        
     </camelContext>
 </beans>

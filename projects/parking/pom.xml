@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.redhat</groupId>
-  <artifactId>resturant</artifactId>
+  <artifactId>parking</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <name>Fabric8 :: Quickstarts :: Spring-Boot :: Camel XML</name>
   <description>Spring Boot example running a Camel route defined in XML</description>

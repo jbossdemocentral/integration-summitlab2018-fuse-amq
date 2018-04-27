@@ -160,7 +160,7 @@ Publishing and receiving from announcement topic!
 
 - Add new integration
 
-- From internalbroker connection with following datashapes
+- From broker connection with following datashapes
 
 ```
 {
@@ -173,7 +173,7 @@ Publishing and receiving from announcement topic!
 
 (TBA) Screen Shoot
 
-- To externalbroker connection with following datashapes
+- To topic connection with following datashapes
 
 ```
 {
@@ -189,30 +189,6 @@ Publishing and receiving from announcement topic!
 ![Working with GUI](docs/images/hack-01-02.png)
 
 
-- Add new integration
-
-- From externalbroker connection with following datashapes
-
-```
-{
-  "username":"accouncement",
-  "content": "this is the message for everyone!!"
-}
-```
-
-- Data Mapper 
-
-(TBA) Screen Shoot
-
-- To internalbroker connection with following datashapes
-
-```
-{
-  "Color":"red",
-  "UserName":"Christina",
-  "Content":"this is the message for everyone!!"
-}
-```
 
 
 ## Second Hack
