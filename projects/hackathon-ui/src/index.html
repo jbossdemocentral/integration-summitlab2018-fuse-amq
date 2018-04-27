@@ -23,15 +23,16 @@
 
   <script src="../node_modules/rhea/dist/rhea.js"></script>
   <script>
+    var config = require('./config/mq_config')
     var client = require('rhea');
     
-    client.options.username = 'amqp';
-    client.options.password = 'password';
+    client.options.username = config.mq_username;//'amqp';
+    client.options.password = config.mq_password;//'password';
     
     var ws = client.websocket_connect(WebSocket);
     var connection = client.connect({
       connection_details: ws(
-        'wss://messaging-maas-hguerrer.6a63.fuse-ignite.openshiftapps.com:443',
+        config.mq_server,//'wss://messaging-maas-hguerrer.6a63.fuse-ignite.openshiftapps.com:443',
         [
           'binary',
                     "AMQPWSB10",
@@ -39,7 +40,7 @@
         ]),
       reconnect: true,
       transport: 'tls',
-      servername: 'messaging-maas-hguerrer.6a63.fuse-ignite.openshiftapps.com',
+      servername: config.server,//'messaging-maas-hguerrer.6a63.fuse-ignite.openshiftapps.com',
       rejectUnauthorized: false
     });
   </script>
