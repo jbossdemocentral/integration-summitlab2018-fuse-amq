@@ -3,7 +3,6 @@ info:
   title: San Fransico ATM Location Service
   description: 2018 Summit Lab - ATM Location Service
   version: 1.0.0
-<<<<<<< HEAD
 host: 'sfatmlocation-2445581558442.production.gw.apicast.io'
 schemes:
   - https
@@ -12,18 +11,6 @@ paths:
     get:
       tags:
         - atm      
-=======
-host: sfatmlocation-2445581558442.production.gw.apicast.io
-schemes:
-  - https
-consumes:
-  - application/json
-produces:
-  - application/json
-paths:
-  /sflocation/atm/all/:
-    get:
->>>>>>> e2757bd4872dd55dadba0d015e6242fe5c9c7f36
       summary: Get all ATM locations
       description: Get all ATM locations in San Fransisco
       parameters:
@@ -37,15 +24,10 @@ paths:
           description: ATM Found
           schema:
             $ref: '#/definitions/atmlocation'
-<<<<<<< HEAD
   /sflocation/atm/bankname/{bankname}:
     get:
       tags:
         - atm      
-=======
-  '/sflocation/atm/bankname/{bankname}/':
-    get:
->>>>>>> e2757bd4872dd55dadba0d015e6242fe5c9c7f36
       summary: Get Bank Name in San Fransisco
       description: |-
         Get all Bank Name in SF
@@ -65,10 +47,6 @@ paths:
           description: ATM Found
           schema:
             $ref: '#/definitions/atmlocation'
-<<<<<<< HEAD
-=======
-          examples: {}
->>>>>>> e2757bd4872dd55dadba0d015e6242fe5c9c7f36
     parameters:
       - name: bankname
         in: path
