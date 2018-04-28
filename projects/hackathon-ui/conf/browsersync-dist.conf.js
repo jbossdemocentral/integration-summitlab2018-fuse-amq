@@ -7,6 +7,10 @@ module.exports = function () {
         conf.paths.dist
       ]
     },
-    open: false
+    open: false,
+    port: 8080,
+    ui: {
+      port: 8081
+    }
   };
 };
