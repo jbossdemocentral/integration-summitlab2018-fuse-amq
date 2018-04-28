@@ -38,7 +38,7 @@ angular
     initAMQ(connection);
 
     function initAMQ(connection) {
-      var receiver = connection.open_receiver('notifications');
+      var receiver = connection.open_receiver(config.mq_notifications);
 
       receiver.on('message', function (context) {
         var notification = context.message.body;

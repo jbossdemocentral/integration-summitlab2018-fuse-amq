@@ -36,7 +36,7 @@ angular
     initAMQ(connection);
 
     function initAMQ(connection) {
-      vm.sender = connection.open_sender('inputs');
+      vm.sender = connection.open_sender(config.mq_inputs);
     }
 
     function save() {

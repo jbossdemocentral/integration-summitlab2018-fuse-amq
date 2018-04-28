@@ -51,9 +51,10 @@
   "scripts": {
     "build": "gulp",
     "serve": "gulp serve",
-    "serve:dist": "bower install && gulp serve:dist",
+    "serve:dist": "gulp serve:dist",
     "test": "gulp test",
     "test:auto": "gulp test:auto",
+    "postinstall": "bower install",
     "bower": "bower install"
   },
   "eslintConfig": {
