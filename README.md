@@ -25,7 +25,7 @@ Go to the following links to access  (login with your user id/pwd)
 https://fusedemo.3scale.net/docs
 
 
-### Schema in Database: (TBC)
+### Schema in Database: 
 To make things more interesting, you will have access to the local conference meetup location in the Database. 
 
 - Schema Name: sampledb 
@@ -39,16 +39,6 @@ To make things more interesting, you will have access to the local conference me
 | lat | decimal | Latitude of the meetup location |
 | desc | text | Short Description of meetups  |
 
-
-### Other Services
-
-To step up the game, you can also use the following services for 
-
-- **Amazon S3**
-More details to come!  (DISCUSSION: Do we set this up for audience or they do it on their own)
-
-- **Twilio**
-More details to come!  (DISCUSSION: Do we set this up for audience or they do it on their own)
 
 
 
@@ -70,7 +60,7 @@ We will have ONE single Topic that everyone listen to for announcement!
 
 
 
-## Working with GUI
+### Working with GUI
 
 ![Working with GUI](docs/images/gui.png)
 
@@ -119,6 +109,7 @@ Map allows you to pin point and mark multiple locations, the location can be set
 ]
 ````
 
+
 ### Showing route in Map
 To add route in the map, simply pass in the route data below into a messaging broker queue:
 
@@ -147,6 +138,43 @@ or
   }
 }
 ```
+
+## Setup Environement
+
+### Add API Connectors
+
+There are five SaaS location service provided, you will need to setup up in Fuse to use it, here is how. [Click me](CUSTOMAPICONNECTOR.md)
+
+### Add Technical Extension
+
+To step up, you can also use the following services for follow this [Link](TECHEXTENSION.md) to install the tech extension. 
+
+- **Log**
+
+This extension allows you to determin what to show in the log
+
+![Log](docs/images/tech-extension-log.png)
+
+- **Twilio**
+
+This extension allows you to send text message, you can define things to send by defining the input and sender message.
+
+![Twilio](docs/images/tech-extension-twilio.png)
+
+
+- **Location List format**
+
+Turns all the API data list into the format that is needed by GUI.
+
+![Location List Format](docs/images/tech-extension-location-list-format.png)
+
+
+- **Remove Camel Header**
+
+Removes the Camel header
+
+![Remove Header](docs/images/tech-extension-removeheader.png)
+
 
 ## First Hack - Data Shapes and Data Mapper
 -Instructor lead-
