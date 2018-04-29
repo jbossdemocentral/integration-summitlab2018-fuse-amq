@@ -54,7 +54,8 @@
     "serve:dist": "gulp serve:dist",
     "test": "gulp test",
     "test:auto": "gulp test:auto",
-    "bower": "bower"
+    "postinstall": "bower install",
+    "bower": "bower install"
   },
   "eslintConfig": {
     "globals": {

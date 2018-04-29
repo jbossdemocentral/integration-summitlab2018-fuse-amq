@@ -63,7 +63,7 @@ angular
     initAMQ(connection);
 
     function initAMQ(connection) {
-      var receiver = connection.open_receiver('locations');
+      var receiver = connection.open_receiver(config.mq_locations);
 
       receiver.on('message', function (context) {
         Locations.locations = context.message.body;

@@ -12,6 +12,10 @@ module.exports = function () {
         '/node_modules': 'node_modules'
       }
     },
-    open: false
+    open: false,
+    port: 8080,
+    ui: {
+      port: 8081
+    }
   };
 };
