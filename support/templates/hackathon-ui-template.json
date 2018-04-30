@@ -5,7 +5,11 @@
         "name": "hackathon-ui",
         "annotations": {
             "iconClass": "icon-nodejs",
-            "description": "Application template for the Web Application"
+            "description": "Application template for the Web Application",
+            "openshift.io/display-name": "Hackathon Web Application",
+            "openshift.io/documentation-url": "https://github.com/jbossdemocentral/summitlab2018",
+            "openshift.io/long-description": "This template defines resources needed for the Hackathon UI",
+            "tags": "quickstart, nodejs, hackathon, iPaaS"
         }
     },
     "labels": {
@@ -303,7 +307,7 @@
             "kind": "Route",
             "apiVersion": "v1",
             "metadata": {
-                "name": "hackathon-ui-http-route",
+                "name": "www-hackathon-ui",
                 "labels": {
                     "app": "hackathon-ui"
                 },
