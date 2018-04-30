@@ -192,8 +192,11 @@ Publishing and receiving from announcement topic!
 
 ```
 {
-  "type":"accouncement",
-  "content": [{"this is the message for everyone!!"}]
+  type: 'announcement',
+  content: {
+    title: 'Tester',
+    text: 'This is the message for everyone!!'
+  }
 }
 ```
 
@@ -205,8 +208,9 @@ Publishing and receiving from announcement topic!
 
 ```
 {
-  "username":"accouncement",
-  "content": "this is the message for everyone!!"
+  type: 'Success',
+  header: 'Christina',
+  message: 'This is the message for <strong>everyone</strong>!!'
 }
 ```
 
