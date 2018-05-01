@@ -25,6 +25,7 @@
         {
             "description": "Messaging Port",
             "name": "AMQ_PORT",
+            "value": "443",
             "required": true
         },
         {
@@ -40,16 +41,19 @@
         {
             "description": "Locations Queue Address",
             "name": "AMQ_LOCATIONS",
+            "value": "locations",
             "required": true
         },
         {
             "description": "Input Queue Address",
             "name": "AMQ_INPUTS",
+            "value": "inputs",
             "required": true
         },
         {
             "description": "Notifications Topic Address",
             "name": "AMQ_NOTIFICATIONS",
+            "value": "notifications",
             "required": true
         },
         {
