@@ -4,6 +4,43 @@ Welcome to this hackathon. Putting integration solution together used to take da
 
 First of all, give us 15 mins to walk through the tooling platform with you,  so you know where everything is. After that we will let you work on two instructor lead integration scenarios, to get you familiar with the environment, and platform. Then you are free to hack it away! 
 
+## Setup Environment
+
+### Add API Connectors
+
+There are five SaaS location service provided, you will need to setup up in Fuse to use it, here is how. [Click me](CUSTOMAPICONNECTOR.md)
+
+### Add Technical Extension
+
+To step up, you can also use the following services for follow this [Link](TECHEXTENSION.md) to install the tech extension. 
+
+- **Log**
+
+This extension allows you to determin what to show in the log
+
+![Log](docs/images/tech-extension-log.png)
+
+- **Twilio**
+
+This extension allows you to send text message, you can define things to send by defining the input and sender message.
+
+![Twilio](docs/images/tech-extension-twilio.png)
+
+
+- **Location List format**
+
+Turns all the API data list into the format that is needed by GUI.
+
+![Location List Format](docs/images/tech-extension-location-list-format.png)
+
+
+- **Remove Camel Header**
+
+Removes the Camel header
+
+![Remove Header](docs/images/tech-extension-removeheader.png)
+
+
 ## Environment 
 
 ### MAP GUI Interface
@@ -23,22 +60,6 @@ Go to the following links to access  (login with your user id/pwd)
 - **Store locations** b62940ff7a175691e0396b28ceaa0bf4
 
 https://fusedemo.3scale.net/docs
-
-
-### Schema in Database: 
-To make things more interesting, you will have access to the local conference meetup location in the Database. 
-
-- Schema Name: sampledb 
-- Table Name: meetups
-
-| Column name | Data Type | Description |
-|---|---|---|
-| meetupid | int | Unique ID number |
-| meetupname | varchar(100) | Name of the meetup |
-| lng | decimal | Longitude of the meetup location |
-| lat | decimal | Latitude of the meetup location |
-| desc | text | Short Description of meetups  |
-
 
 
 
@@ -110,9 +131,6 @@ Map allows you to pin point and mark multiple locations, the location can be set
 ````
 
 
-### Showing route in Map
-To add route in the map, simply pass in the route data below into a messaging broker queue:
-
 ### Data from Input
 Inputs are collected and formatted into a messaging broker queue ready for you to process after submitting it with the submit button. An example of the data is show below:
 
@@ -126,69 +144,56 @@ Inputs are collected and formatted into a messaging broker queue ready for you t
 }
 ```
 
-or 
-
-```
-{
-  "type": "announcement",
-  "content": {
-    "title": "Tester",
-    "text": "This is the message for everyone!!"
-  }
-}
-```
-
-## Setup Environement
-
-### Add API Connectors
-
-There are five SaaS location service provided, you will need to setup up in Fuse to use it, here is how. [Click me](CUSTOMAPICONNECTOR.md)
-
-### Add Technical Extension
-
-To step up, you can also use the following services for follow this [Link](TECHEXTENSION.md) to install the tech extension. 
-
-- **Log**
-
-This extension allows you to determin what to show in the log
-
-![Log](docs/images/tech-extension-log.png)
-
-- **Twilio**
-
-This extension allows you to send text message, you can define things to send by defining the input and sender message.
-
-![Twilio](docs/images/tech-extension-twilio.png)
-
-
-- **Location List format**
-
-Turns all the API data list into the format that is needed by GUI.
-
-![Location List Format](docs/images/tech-extension-location-list-format.png)
-
-
-- **Remove Camel Header**
-
-Removes the Camel header
-
-![Remove Header](docs/images/tech-extension-removeheader.png)
 
 
 ## First Hack - Data Shapes and Data Mapper
 -Instructor lead-
 
+Publishing input and receiving from announcement topic!
 ![Working with GUI](docs/images/hack-01-01.png)
-
-Publishing and receiving from announcement topic!
+![Working with GUI](docs/images/hack-01-02.png)
 
 - Add connection for messaging broker for Input queue and announcement topic
-(TBA) Screen Shoot
+Select the **Connections** on the side menu, and click on **Add Connection** button on the top right hand corner.
+![AMQP Connection Setup](docs/images/amqp-connection-01.png)
 
-- Add new integration
+Click on the AMQP Connector.
+![AMQP Connection Setup](docs/images/amqp-connection-02.png)
 
-- From broker connection with following datashapes
+Configure your AMQP settings accordingly, all the information should be avaliable in your OSE env, within the Broker's secret setting. 
 
+   	- Connection URL : amqp://*messagingHost* 
+   	- User Name: *username*
+   	- Password: *password*
+   	- Check Certificate: *Disable*
+
+And click **Next** when done. 
+
+![AMQP Connection Setup](docs/images/amqp-connection-04.png)
+![AMQP Connection Setup](docs/images/amqp-connection-03.png)
+
+Give a name to your broker connection, and click **create** 
+![AMQP Connection Setup](docs/images/amqp-connection-05.png)
+
+- **Create new integration**. Select the **Integration** on the side menu, and click on **Create Integration** in the center.
+
+![Integration hack one](docs/images/hackone-integration-01.png)
+
+- Select <YOUR_BROKER_CONNECTION> .
+![Integration hack one](docs/images/hackone-integration-02.png)
+
+- Select *subscribe for messages action*. 
+![Integration hack one](docs/images/hackone-integration-03.png)
+
+- Configure the name of the queue to listen
+	- Destination Name: inputs
+	- Destination Type: Queue 
+![Integration hack one](docs/images/hackone-integration-04.png)
+
+- Configure the Output data type,  
+  	- Select Type: JSON Instance
+	- Definition: 
+	
 ```
 {
   "type": "announcement",
@@ -198,26 +203,55 @@ Publishing and receiving from announcement topic!
   }
 }
 ```
+![Integration hack one](docs/images/hackone-integration-05.png)
 
-- Data Mapper 
+- For end connector setting, and select the <YOUR_BROKER_CONNECTION>   
+![Integration hack one](docs/images/hackone-integration-06.png)
 
-(TBA) Screen Shoot
+- Select *Publish messages action*. 
+![Integration hack one](docs/images/hackone-integration-07.png)
 
-- To topic connection with following datashapes
+- Configure the name of the queue to listen
+	- Destination Name: notifications
+	- Destination Type: Queue 
+![Integration hack one](docs/images/hackone-integration-08.png)
 
+- Configure the Output data type,  
+  	- Select Type: JSON Instance
+	- Definition: 
+	
 ```
 {
   "type": "Success",
   "header": "Christina",
   "message": "This is the message for <strong>everyone</strong>!!"
 }
-```
+```	
+![Integration hack one](docs/images/hackone-integration-09.png)
+
+- Select *Add a Step* in the center
+![Integration hack one](docs/images/hackone-integration-10.png)
+
+- Select *Data Mapper* in action
+![Integration hack one](docs/images/hackone-integration-12.png)
+
+- Add two contant by clicking in the Source column **"+"** of *Constants* drop down menu. 
+	- <YOUR_NAME>
+	- Warning 
+![Integration hack one](docs/images/hackone-integration-11.png)
+
+- Drag and connect from Source to Target and click in **Done**
+	- Custom -> Content -> text **to** message
+	- Constants -> <YOUR_NAME>  **to** header
+	- Constants -> Warning **to** type 
+![Integration hack one](docs/images/hackone-integration-13.png)
+
+- Give a name to integration and click in **Finish**
+![Integration hack one](docs/images/hackone-integration-14.png)
 
 
 
 
-
-![Working with GUI](docs/images/hack-01-02.png)
 
 
 
