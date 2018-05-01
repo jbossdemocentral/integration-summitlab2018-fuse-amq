@@ -45,7 +45,7 @@ angular
 
         var notification = angular.fromJson(context.message.body ? context.message.body : context.message);
 
-        $log.info('Message received: ' + notification);
+        $log.info('Message received: ' + angular.toJson(notification));
 
         Notifications.message(
           typeMap[notification.type] ? typeMap[notification.type] : typeMap[vm.type],

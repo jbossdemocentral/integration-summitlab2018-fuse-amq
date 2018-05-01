@@ -70,7 +70,7 @@ angular
 
         var location = angular.fromJson(context.message.body ? context.message.body : context.message);
 
-        $log.info('Message received: ' + location);
+        $log.info('Message received: ' + angular.toJson(location));
 
         Locations.locations = location;
 
