@@ -6,7 +6,7 @@ angular
 
 angular
   .module('app')
-  .controller('NotificationListController', ['$window', '$scope', '$rootScope', 'Notifications', function ($window, $scope, $rootScope, Notifications) {
+  .controller('NotificationListController', ['$window', '$scope', '$rootScope', '$log', 'Notifications', function ($window, $scope, $rootScope, $log, Notifications) {
     var vm = this;
     vm.showClose = true;
     vm.htmlContent = true;
@@ -41,7 +41,12 @@ angular
       var receiver = connection.open_receiver(config.mq_notifications);
 
       receiver.on('message', function (context) {
-        var notification = context.message.body;
+        $log.debug('Raw message: ' + context.message);
+        
+        var notification = context.message.body ? context.message.body : context.message;
+
+        $log.info('Message received: ' + notification);
+
         Notifications.message(
           typeMap[notification.type] ? typeMap[notification.type] : typeMap[vm.type],
           notification.header ? notification.header + ':' : vm.header,

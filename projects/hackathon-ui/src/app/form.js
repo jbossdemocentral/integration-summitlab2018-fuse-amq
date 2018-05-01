@@ -17,7 +17,7 @@ angular
 
 angular
   .module('app')
-  .controller('FormController', ['$scope', '$timeout', '$window', 'Locations', function ($scope, $timeout, $window, Locations) {
+  .controller('FormController', ['$scope', '$timeout', '$window', '$log', 'Locations', function ($scope, $timeout, $window, $log, Locations) {
     var vm = this;
     vm.item = {
       title: 'teste',
@@ -54,8 +54,12 @@ angular
 
       location.comments.push(comment);
 
+      var text = angular.toJson(comment, true);
+
+      $log.info('Sending message: ' + text);
+
       vm.sender.send({
-        body: JSON.stringify(comment)
+        body: text
       });
 
       $timeout(function () {
