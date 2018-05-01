@@ -12,6 +12,7 @@ First of all, give us 15 mins to walk through the tooling platform with you,  so
 	- Showing Locations in the Map
 	- Data from Input
 - [Lab instructions] (## LAB Instructions)
+	- Configure Broker
 	- Add API Connectors
 	- Add Technical Extension
 	- First Hack
@@ -123,6 +124,10 @@ Inputs are collected and formatted into a messaging broker queue ready for you t
 
 
 ## LAB Instructions
+
+### Configure Broker
+
+To provision messaging infrastructure by following the [instruction](service-catalog-tutorial.md). 
 
 ### Add API Connectors
 

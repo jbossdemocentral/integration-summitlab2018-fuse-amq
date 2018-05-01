@@ -100,3 +100,12 @@ Select the **Connections** on the side menu, and click on **Add Connection** but
 
 - Give a name to integration and click in **Finish**
 ![Integration hack one](docs/images/hackone-integration-14.png)
+
+- Go to your UI, *http://www-hackathon-ui-<USER_NAME>.apps.<ID>.openshift.opentlc.com/*
+,in the input panel, select Annoucement, and save your input.
+
+![Integration hack one](docs/images/hackone-integration-15.png)
+
+- You should see a small alert pop up on the top righthand corner.
+
+![Integration hack one](docs/images/hackone-integration-16.png)
