@@ -1,4 +1,4 @@
-## Deploying Web Application
+## Deploying Web Application
 
 You can now deploy the Hackathon UI Web Application. It will become the point of interface with the backend integrations through the addresses you define in the previous step. 
 
