@@ -54,7 +54,15 @@ angular
 
       location.comments.push(comment);
 
-      var text = angular.toJson(comment, true);
+      var message = {
+        type: comment.type,
+        content: {
+          title: comment.title,
+          text: comment.description
+        }
+      };
+
+      var text = angular.toJson(message, true);
 
       $log.info('Sending message: ' + text);
 

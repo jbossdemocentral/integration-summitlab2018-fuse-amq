@@ -42,10 +42,10 @@ angular
 
       receiver.on('message', function (context) {
         $log.debug('Raw message: ' + context.message);
-        
-        var notification = context.message.body ? context.message.body : context.message;
 
-        $log.info('Message received: ' + notification);
+        var notification = angular.fromJson(context.message.body ? context.message.body : context.message);
+
+        $log.info('Message received: ' + angular.toJson(notification));
 
         Notifications.message(
           typeMap[notification.type] ? typeMap[notification.type] : typeMap[vm.type],

@@ -66,7 +66,14 @@ angular
       var receiver = connection.open_receiver(config.mq_locations);
 
       receiver.on('message', function (context) {
-        Locations.locations = context.message.body;
+        $log.debug('Raw message: ' + context.message);
+
+        var location = angular.fromJson(context.message.body ? context.message.body : context.message);
+
+        $log.info('Message received: ' + angular.toJson(location));
+
+        Locations.locations = location;
+
         var mapLocations = Locations.locations.map(a => {
           return {
             lat: a.location.lat,
