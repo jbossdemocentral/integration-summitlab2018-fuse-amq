@@ -127,7 +127,11 @@ Inputs are collected and formatted into a messaging broker queue ready for you t
 
 ### Configure Broker
 
-To provision messaging infrastructure by following the [instruction](service-catalog-tutorial.md). 
+To provision messaging service infrastructure by following the [instructions](service-catalog-tutorial.md). 
+
+### Deploy UI Web Application
+
+Deploy the web application UI with these [instructions](web-application-ui.md).
 
 ### Add API Connectors
 
@@ -135,7 +139,7 @@ There are five SaaS location service provided, you will need to setup up in Fuse
 
 ### Add Technical Extension
 
-To step up, you can also use the following services for follow this [Link](TECHEXTENSION.md) to install the tech extension. 
+To step up, you can also use the following services for follow this [Link](TECHEXTENSION.md) to install the tech extension.
 
 ### First Hack
 -Instructor lead-
