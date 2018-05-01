@@ -69,9 +69,9 @@ To display messages in the notifications widget, you will need to send the text 
 
 ```
 {
-  type: 'Success',
-  header: 'Christina',
-  message: 'This is the message for <strong>everyone</strong>!!'
+  "type": "Success",
+  "header": "Christina",
+  "message": "This is the message for <strong>everyone</strong>!!"
 }
 ```
 
@@ -88,24 +88,24 @@ Map allows you to pin point and mark multiple locations, the location can be set
 
 ````
 [
-  {
-    location: {
-      lat: 37.784323,
-      lng: -122.40069
-    },
-    title: 'Moscone Center',
-    type: 'Point of Interest',
-    id: 109
-  },
-  {
-    location: {
-      lat: 37.785905,
-      lng: -122.413022
-    },
-    title: 'Hilton Union Square',
-    type: 'Hotel',
-    id: 203
-  }
+   {
+      "location":{
+         "lat":37.784323,
+         "lng":-122.40069
+      },
+      "title":"Moscone Center",
+      "type":"Point of Interest",
+      "id":"109"
+   },
+   {
+      "location":{
+         "lat":37.785905,
+         "lng":-122.413022
+      },
+      "title":"Hilton Union Square",
+      "type":"Hotel",
+      "id":"203"
+   }
 ]
 ````
 
@@ -118,10 +118,10 @@ Inputs are collected and formatted into a messaging broker queue ready for you t
 
 ```
 {
-  type: 'announcement',
-  content: {
-    title: 'Tester',
-    text: 'This is the message for everyone!!'
+  "type": "announcement",
+  "content": {
+    "title": "Tester",
+    "text": "This is the message for everyone!!"
   }
 }
 ```
@@ -130,11 +130,10 @@ or
 
 ```
 {
-  type: 'forLocation',
-  content: {
-    id: '109',
-    title: 'Comment',
-    text: 'Here's a comment'
+  "type": "announcement",
+  "content": {
+    "title": "Tester",
+    "text": "This is the message for everyone!!"
   }
 }
 ```
@@ -192,8 +191,11 @@ Publishing and receiving from announcement topic!
 
 ```
 {
-  "type":"accouncement",
-  "content": [{"this is the message for everyone!!"}]
+  "type": "announcement",
+  "content": {
+    "title": "Tester",
+    "text": "This is the message for everyone!!"
+  }
 }
 ```
 
@@ -205,8 +207,9 @@ Publishing and receiving from announcement topic!
 
 ```
 {
-  "username":"accouncement",
-  "content": "this is the message for everyone!!"
+  "type": "Success",
+  "header": "Christina",
+  "message": "This is the message for <strong>everyone</strong>!!"
 }
 ```
 
@@ -242,8 +245,11 @@ Showing all Parking locations has the most cheap rate
 
 ```
 {
-  "type":"accouncement",
-  "content": [{"this is the message for everyone!!"}]
+  "type": "announcement",
+  "content": {
+    "title": "Tester",
+    "text": "This is the message for everyone!!"
+  }
 }
 ```
 
