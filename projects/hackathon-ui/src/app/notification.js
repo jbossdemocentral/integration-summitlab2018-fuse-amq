@@ -42,8 +42,8 @@ angular
 
       receiver.on('message', function (context) {
         $log.debug('Raw message: ' + context.message);
-        
-        var notification = context.message.body ? context.message.body : context.message;
+
+        var notification = angular.fromJson(context.message.body ? context.message.body : context.message);
 
         $log.info('Message received: ' + notification);
 
