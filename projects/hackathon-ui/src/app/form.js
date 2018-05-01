@@ -55,7 +55,7 @@ angular
       location.comments.push(comment);
 
       vm.sender.send({
-        body: comment
+        body: JSON.stringify(comment);
       });
 
       $timeout(function () {
