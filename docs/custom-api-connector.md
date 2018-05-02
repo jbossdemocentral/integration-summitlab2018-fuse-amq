@@ -51,7 +51,7 @@ Now it's time to create a Connection, select the **Connections** on the side nav
 
 ![Create API Connections](images/create-connection-01.png)
 
-Select *San Fransisco Parking API* Connecotr
+Select *San Fransisco Parking API* Connector
 
 ![Create API Connections](images/create-connection-02.png)
 

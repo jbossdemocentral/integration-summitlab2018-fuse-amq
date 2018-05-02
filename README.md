@@ -1,29 +1,26 @@
 # L1120 iPaaS Hackathon
 
-Welcome to this hackathon. Putting integration solution together used to take days and you will have to have some sort of coding background to successfully put data from various services together. Today, with Red Hat’s low code iPaaS platform, we will use the minimum number of codes to achieve maximum integration results! 
+Welcome to this hackathon. Putting integration solution together used to take days and you will have to have some sort of coding background to successfully put data from various services together. Today, with Red Hat's low code iPaaS platform, we will use the minimum number of codes to achieve maximum integration results! 
 
 First of all, give us 15 mins to walk through the tooling platform with you,  so you know where everything is. After that we will let you work on two instructor lead integration scenarios, to get you familiar with the environment, and platform. Then you are free to hack it away! 
 
-- [Background](## Background)
+- [Background](#background)
 	- Location API Services
 	- Deployment on AMQ Online
 	- Working with GUI
 	- Communicating with the Notifications Display 
 	- Showing Locations in the Map
 	- Data from Input
-- [Lab instructions] (## LAB Instructions)
+- [Lab instructions](#lab-instructions)
 	- Configure Broker
 	- Add API Connectors
 	- Add Technical Extension
 	- First Hack
 	- Second Hack
 
-
-
 ## Background 
 
 ![Lab Environment](docs/images/labenv.png)
-
 
 ### Location API Services
 
@@ -40,8 +37,6 @@ API documents of the services
 | **Bar locations** |  f6ba725532f6797d5dc7afbf8c012c20 |
 | **Store locations** | b62940ff7a175691e0396b28ceaa0bf4 |
 
-
-
 ### Deployment on AMQ Online
 
 We will have ONE single Topic that everyone listen to for announcement! 
@@ -49,15 +44,13 @@ We will have ONE single Topic that everyone listen to for announcement!
 - 1 queue for __display__
 - 1 queue for __input__
 - 1 queue for __location display in map__
-- 1 queue for __route display in map__
 - 3 queues in case the participants needs it, __temp queues__
-
 
 ![Broker Env](docs/images/msgenv.png)
 
 ### Working with GUI
 
-Go to [http://gui-YOURUSERID-summitlab.opentlc.com](http://gui-YOURUSERID-summitlab.opentlc.com) (TBC). This is where you can use to display the result, and places for you to submit input as well.  To interact You will need to pass/retrive data from messaging queues that are assign to you!
+Navigate to [http://www-hackathon-ui-\<YOURUSERID\>.apps.hackahton.openshiftworkshop.com](http://www-hackathon-ui-<YOURUSERID>.apps.hackahton.openshiftworkshop.com) in your browser. This is where you can use to display the result, and places for you to submit input as well.  To interact you will need to pass/retrive data from messaging queues you created in your address space!
 
 ![Working with GUI](docs/images/gui.png)
 
@@ -144,12 +137,12 @@ To step up, you can also use the following services for follow this [Link](docs/
 ### First Hack
 -Instructor lead-
 
-- Follow the [instruction](docs/hack-01.md) 
+- Follow the [instructions](docs/hack-01.md) 
 
 ### Second Hack
 -Instructor lead-
 
-- Follow the [instruction](docs/hack-02.md) 
+- Follow the [instructions](docs/hack-02.md) 
 
 ## Off you go 
 Have fun Hacking!
