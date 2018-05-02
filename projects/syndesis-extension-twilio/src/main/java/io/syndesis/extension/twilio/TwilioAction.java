@@ -72,9 +72,9 @@ public class TwilioAction implements Step {
     public Optional<ProcessorDefinition> configure(CamelContext context, ProcessorDefinition route, Map<String, Object> parameters) {
         
         //Preset Account so user doesn't have to do it 
-        twilioConfiguration.setAccountSid("AC26255ca9b8c5e0dfa6a9511dbef87a86");
-        twilioConfiguration.setPassword("ddb1ed9d8cde9ba2b7863bb5e6f75c14");
-        twilioConfiguration.setUsername("AC26255ca9b8c5e0dfa6a9511dbef87a86");
+        twilioConfiguration.setAccountSid("YOUR TWILIO AccountSid ");
+        twilioConfiguration.setPassword("YOUR TWILIO PWD");
+        twilioConfiguration.setUsername("USER NAME");
         twilioConfiguration.setApiName(TwilioApiName.MESSAGE);
         twilioConfiguration.setMethodName("CREATE");
         
