@@ -65,7 +65,7 @@ Select the **Connections** on the side menu, and click on **Add Connection** but
 
 - Configure the name of the queue to listen
 	- Destination Name: notifications
-	- Destination Type: Queue 
+	- Destination Type: Topic 
 ![Integration hack one](docs/images/hackone-integration-08.png)
 
 - Configure the Output data type,  
@@ -94,7 +94,7 @@ Select the **Connections** on the side menu, and click on **Add Connection** but
 
 - Drag and connect from Source to Target and click in **Done**
 	- Custom -> Content -> text **to** message
-	- Constants -> <YOUR_NAME>  **to** header
+	- Custom -> Content -> title  **to** header
 	- Constants -> Warning **to** type 
 ![Integration hack one](docs/images/hackone-integration-13.png)
 
@@ -102,7 +102,10 @@ Select the **Connections** on the side menu, and click on **Add Connection** but
 ![Integration hack one](docs/images/hackone-integration-14.png)
 
 - Go to your UI, *http://www-hackathon-ui-<USER_NAME>.apps.<ID>.openshift.opentlc.com/*
-,in the input panel, select Annoucement, and save your input.
+,in the input panel, 
+	- Tyoe: Annoucement
+	- Titles: < YOUR_NAME >
+	- Text: Hello
 
 ![Integration hack one](docs/images/hackone-integration-15.png)
 
