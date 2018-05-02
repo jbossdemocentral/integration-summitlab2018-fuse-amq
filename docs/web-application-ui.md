@@ -16,27 +16,27 @@ To deploy the application complete the following steps:
 
 1. In the OpenShift Service Catalog overview, select **Hackathon Web Application**.
 
-    ![hackathon-ui](docs/images/webapp-01.png)
+    ![hackathon-ui](images/webapp-01.png)
 
 1. Click on **Next >**.
 
-    ![Information](docs/images/webapp-02.png)
+    ![Information](images/webapp-02.png)
 
 1. Fill in the connection configuration to the messaging environment. You collected the information in the last step of the previous section: _Create Application Credentials_.Then click on **Next >**.
 
-    ![Configuration 1](docs/images/webapp-03.png)
+    ![Configuration 1](images/webapp-03.png)
 
     Scroll down and fill in the addresses names.
 
-    ![Configuration 2](docs/images/webapp-03b.png)
+    ![Configuration 2](images/webapp-03b.png)
 
 1. In the next screen select **Do not bind at this time**. Click on **Create**.
 
-    ![Binding](docs/images/webapp-04.png)
+    ![Binding](images/webapp-04.png)
 
 1. In the final step of the wizard click on the **Continue to the project overview** link,
 
-    ![Results](docs/images/webapp-05.png)
+    ![Results](images/webapp-05.png)
 
 If you prefer to use the OpenShift CLI issue the following command:
 
@@ -79,12 +79,12 @@ You will get a text output like the following:
 
 It will take a few minutes for the server to provision.
 
-![Results](docs/images/webapp-06.png)
+![Results](images/webapp-06.png)
 
 The build will start automatically. I will take a while to setup the build and deploy the application. Please wait to get the pod up and running (blue circle).
 
-![Building](docs/images/webapp-07.png)
+![Building](images/webapp-07.png)
 
 After the build is over and the application has been deployed you can click on the application URL to access the UI.
 
-![Running](docs/images/webapp-08.png)
+![Running](images/webapp-08.png)

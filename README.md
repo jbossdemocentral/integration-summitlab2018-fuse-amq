@@ -127,29 +127,29 @@ Inputs are collected and formatted into a messaging broker queue ready for you t
 
 ### Configure Broker
 
-To provision messaging service infrastructure by following the [instructions](service-catalog-tutorial.md). 
+To provision messaging service infrastructure by following the [instructions](docs/service-catalog-tutorial.md). 
 
 ### Deploy UI Web Application
 
-Deploy the web application UI with these [instructions](web-application-ui.md).
+Deploy the web application UI with these [instructions](docs/web-application-ui.md).
 
 ### Add API Connectors
 
-There are five SaaS location service provided, you will need to setup up in Fuse to use it, here is how. [Click me](CUSTOMAPICONNECTOR.md)
+There are five SaaS location service provided, you will need to setup up in Fuse to use it, here is how. [Click me](docs/custom-api-connector.md)
 
 ### Add Technical Extension
 
-To step up, you can also use the following services for follow this [Link](TECHEXTENSION.md) to install the tech extension.
+To step up, you can also use the following services for follow this [Link](docs/tech-extension.md) to install the tech extension.
 
 ### First Hack
 -Instructor lead-
 
-- Follow the [instruction](Hack-01.md) 
+- Follow the [instruction](docs/hack-01.md) 
 
 ### Second Hack
 -Instructor lead-
 
-- Follow the [instruction](Hack-02.md) 
+- Follow the [instruction](docs/hack-02.md) 
 
 ## Off you go 
 Have fun Hacking!
