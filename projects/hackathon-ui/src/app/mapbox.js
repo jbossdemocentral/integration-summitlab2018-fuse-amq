@@ -6,13 +6,19 @@ angular
 
 angular
   .module('app').controller('LeafletController', ['$window', '$scope', '$log', 'Locations', function ($window, $scope, $log, Locations) {
+    var default_icon = {
+      iconUrl: 'bower_components/leaflet/dist/images/marker-icon.png',
+      iconRetinaUrl: 'bower_components/leaflet/dist/images/marker-icon-2x.png',
+      shadowUrl: 'bower_components/leaflet/dist/images/marker-shadow.png',
+    };
     var moscone = {
       location: {
         lat: 37.784323,
         lng: -122.40069,
         message: 'Moscone Center',
         draggable: false,
-        riseOnHover: true
+        riseOnHover: true,
+        icon: default_icon
       },
       title: 'Moscone Center',
       type: 'Point of Interest',
@@ -80,7 +86,12 @@ angular
             lng: a.location.lng,
             title: a.title,
             message: a.title,
-            draggable: false
+            draggable: false,
+            icon: {
+              iconUrl: 'bower_components/leaflet/dist/images/marker-icon.png',
+              iconRetinaUrl: 'bower_components/leaflet/dist/images/marker-icon-2x.png',
+              shadowUrl: 'bower_components/leaflet/dist/images/marker-shadow.png',
+            }
           };
         });
         angular.extend($scope, {
