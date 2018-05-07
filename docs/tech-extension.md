@@ -1,5 +1,6 @@
 # Setup Technical Extension
 
+Download all tech extensions under [support/techextensions](../support/techextensions/)
 
 To setup extension of the API connectors, go to Customizations on the side navigation menu. Select the top **Extensions** tab, select **Import Extensions**.
 
@@ -22,4 +23,6 @@ Repeat the other tech extension in **Extensions** folder.
 - manage-headers-extension-1.0.0.jar
 - syndesis-connector-log-1.0.0.jar
 - twilio-extension-1.0.0.jar
+- syndesis-connector-timer-1.0.0.jar
+- syndesis-extension-json-dataformat-1.0.0.jar
 
