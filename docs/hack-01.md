@@ -5,7 +5,7 @@ Publishing input and receiving from announcement topic!
 ![Working with GUI](images/hack-01-01.png)
 ![Working with GUI](images/hack-01-02.png)
 
-- Add connection for messaging broker for Input queue and announcement topic. Select the **Connections** on the side menu, and click on **Add Connection** button on the top right hand corner.
+- Add connection for messaging broker for Input queue and announcement topic. Select the **Connections** on the side menu, and click on **Create Connection** button on the top right hand corner.
 
   ![AMQP Connection Setup](images/amqp-connection-01.png)
 
@@ -30,7 +30,7 @@ Publishing input and receiving from announcement topic!
 
   ![AMQP Connection Setup](images/amqp-connection-05.png)
 
-- **Create new integration**. Select the **Integration** on the side menu, and click on **Create Integration** in the center.
+- **Create new integration**. Select the **Integrations** on the side menu, and click on **Create Integration** in the center.
 
   ![Integration hack one](images/hackone-integration-01.png)
 
@@ -42,7 +42,7 @@ Publishing input and receiving from announcement topic!
 
   ![Integration hack one](images/hackone-integration-03.png)
 
-- Configure the name of the queue to listen
+- Configure the name of the queue to listen and click *Next*
 	- Destination Name: inputs
 	- Destination Type: Queue 
 
@@ -73,6 +73,7 @@ Publishing input and receiving from announcement topic!
 - Configure the name of the queue to listen
 	- Destination Name: notifications
 	- Destination Type: Topic 
+	- Disable persisttent
 
   ![Integration hack one](images/hackone-integration-08.png)
 
@@ -98,9 +99,8 @@ Publishing input and receiving from announcement topic!
 
   ![Integration hack one](images/hackone-integration-12.png)
 
-- Add two contant by clicking in the Source column **"+"** of *Constants* drop down menu. 
-	- <YOUR_NAME>
-	- Warning 
+- Add two constants by clicking in the Source column **"+"** of *Constants* drop down menu. 
+	- Warning (Type: String)
 
   ![Integration hack one](images/hackone-integration-11.png)
 
@@ -111,12 +111,12 @@ Publishing input and receiving from announcement topic!
 
   ![Integration hack one](images/hackone-integration-13.png)
 
-- Give a name to integration and click in **Finish**
+- **Publish** the integrtation, Give a name to integration and click in **Finish**
 
   ![Integration hack one](images/hackone-integration-14.png)
 
 - Go to your UI, *http://www-hackathon-ui-<USER_NAME>.apps.hackathon.openshiftworkshop.com/*, in the input panel, 
-	- Tyoe: Annoucement
+	- Tyoe: Announcement
 	- Titles: < YOUR_NAME >
 	- Text: Hello
 
