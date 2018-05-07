@@ -25,8 +25,7 @@ This tutorial walks you through provisioning messaging infrastructure and deploy
 
     ![Results](images/messaging-05.png)
 
-1. The address space will be provisioned and may take a few
-minutes.
+1. Scroll down to the botton, and find the provisioned servives. The address space will be provisioned and may take a few minutes.
 
     ![Provisioning](images/messaging-06.png)
 
@@ -36,7 +35,7 @@ minutes.
 
     ![Service](images/messaging-07.png)
 
-1. Log in to the Messaging console by clicking on the **Dashboard** link. It will open a new tab.
+1. Log in to the Messaging console by clicking on the **Dashboard** link. It will open a new tab. (Add privilege and say yes to the unsecured permission.)
 
     ![Dashboard link](images/messaging-08.png)
 
@@ -74,10 +73,9 @@ minutes.
 
     ![Address](images/messaging-16.png)
 
-1. Add the following addresses to your space:
+1. Now we need more address to service our application. Add the following addresses to your space:
 
     * **notifications** - type: *topic*
-    * **inputs** - type: *queue*
     * **locations** - type: *queue*
     * **temp1** - type: *queue*
     * **temp2** - type: *queue*
@@ -89,7 +87,7 @@ minutes.
 
 Now you are able to provision credentials for your applications. You will need this information when creating the Web Application UI. Follow the next steps to create an app binding.
 
-1. Get back to the OpenShift web console.
+1. Go to the OpenShift web console. (where you started)
 
 1. Click on **Create Binding** link of the messaging service. Wait a few seconds to let the wizard dialog load completly.
 
