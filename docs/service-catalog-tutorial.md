@@ -97,7 +97,7 @@ Now you are able to provision credentials for your applications. You will need t
 
     ![Binding](images/messaging-18.png)
 
-1. Select the **externalAccess** checkbox and leave the default options. Click **Bind**.
+1. Select **ALL** the checkboxes and leave the default options. Click **Bind**.
 
     ![Parameters](images/messaging-19.png)
 
