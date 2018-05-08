@@ -113,7 +113,10 @@ Now you are able to provision credentials for your applications. You will need t
 
     ![Reveal Secret](images/messaging-22.png)
 
-1. Take notice of the **externalMessagingHost**, **externalMessagingPort**, **password**, and **username** you will need those values to connec the web application UI to the messaging service.
+1. Take notice of the **externalMessagingHost**, **externalMessagingPort**, **password**, and **username** you will need those values to connect the web application UI to the messaging service.
+
+    **IMPORTANT:**
+    Copy and paste this info or open another it in another tab so you can access it quickly in the next step.
 
     ![Credentials](images/messaging-23.png)
 
@@ -121,3 +124,5 @@ Now you are able to provision credentials for your applications. You will need t
 
 In this tutorial, you've seen how to provision messaging using the OpenShift Service Catalog. You
 have seen how to bind it to the provisioned messaging service. You then used the messaging console to create an address before modifying the application to use the secret for authenticating.
+
+**End of Section**
