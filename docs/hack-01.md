@@ -114,8 +114,27 @@ Publishing input and receiving from announcement topic!
 - **Publish** the integrtation, Give a name to integration and click in **Finish**
 
   ![Integration hack one](images/hackone-integration-14.png)
+  
+	### IMPORTANT
 
-- Go to your UI, *http://www-hackathon-ui-<USER_NAME>.apps.hackathon.openshiftworkshop.com/*, in the input panel, 
+	Accept the self-signed certificates before using the UI or it won't be able to connect to the backend services. In a browser tab go to the following url. Replace *X* with your actual user number.
+
+	```
+	https://messaging-enmasse-userX.apps.hackathon.openshiftworkshop.com 
+	```
+
+	Accept the certificate validation by clicking on **ADVANCED**
+
+	![Advanced Self Signed Certificate](images/self-signed-cert-01.png)
+	
+	Then clicking on **Proceed to messaging-enmasse-userX.apps.hackathon.openshiftworkshop.com (unsafe)**
+	
+	![Accept Self Signed Certificate](images/self-signed-cert-02.png)
+	
+	The page will keep on *Waiting for messaging-enmasse-userX.apps.hackathon.openshiftworkshop.com* to load. That's fine it means you are connected to the backend service, but as we are not sending anything back it will stuck like that. You can now close this tab and continue with the rest of the procedure.
+
+
+- Go to your UI, *http://www-hackathon-ui-\<USER_NAME\>.apps.hackathon.openshiftworkshop.com/*, in the input panel, 
 	- Tyoe: Announcement
 	- Titles: < YOUR_NAME >
 	- Text: Hello

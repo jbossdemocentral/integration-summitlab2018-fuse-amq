@@ -4,13 +4,21 @@ You can now deploy the Hackathon UI Web Application. It will become the point of
 
 ### IMPORTANT
 
-Accept the self-signed certificates before using the UI or it won't be able to connect. In a browser tab go to: 
+Accept the self-signed certificates before using the UI or it won't be able to connect to the backend services. In a browser tab go to the following url. Replace *X* with your actual user number.
 
 ```
-https://<REPLACE-WITH-YOUR-MESSAGING-HOST> 
+https://messaging-enmasse-userX.apps.hackathon.openshiftworkshop.com 
 ```
 
-Accept the certificate validation and then reload your the web application UI.
+Accept the certificate validation by clicking on **ADVANCED**
+
+![Advanced Self Signed Certificate](images/self-signed-cert-01.png)
+
+Then clicking on **Proceed to messaging-enmasse-userX.apps.hackathon.openshiftworkshop.com (unsafe)**
+
+![Accept Self Signed Certificate](images/self-signed-cert-02.png)
+
+The page will keep on *Waiting for messaging-enmasse-userX.apps.hackathon.openshiftworkshop.com* to load. That's fine it means you are connected to the backend service, but as we are not sending anything back it will stuck like that. You can now close this tab and continue with the rest of the procedure.
 
 To deploy the application complete the following steps:
 
@@ -81,10 +89,18 @@ It will take a few minutes for the server to provision.
 
 ![Results](images/webapp-06.png)
 
-The build will start automatically. I will take a while to setup the build and deploy the application. Please wait to get the pod up and running (blue circle).
+The build will start automatically. It will take a while to setup the build and deploy the application. Please wait for the pod to be up and running (dark blue circle, "Running" label should display when you put the mouse over the circle). *It may take up to 5 minutes to complete this step*.
 
 ![Building](images/webapp-07.png)
 
 After the build is over and the application has been deployed you can click on the application URL to access the UI.
 
 ![Running](images/webapp-08.png)
+
+You will then see the web application UI.
+
+![Web Application](images/webapp-09.png)
+
+If you see the above application you've done with this step. Go back to the main instructions and keep with the next step.
+
+**End of Section**
