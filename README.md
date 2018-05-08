@@ -135,12 +135,10 @@ There are five SaaS location service provided, you will need to setup up in Fuse
 To step up, you can also use the following services for follow this [Link](docs/tech-extension.md) to install the tech extension.
 
 ### First Hack
--Instructor lead-
 
 - Follow the [instructions](docs/hack-01.md) 
 
 ### Second Hack
--Instructor lead-
 
 - Follow the [instructions](docs/hack-02.md) 
 
