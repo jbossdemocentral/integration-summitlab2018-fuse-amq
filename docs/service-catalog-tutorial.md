@@ -38,6 +38,22 @@ This tutorial walks you through provisioning messaging infrastructure and deploy
 1. Log in to the Messaging console by clicking on the **Dashboard** link. It will open a new tab. (Add privilege and say yes to the unsecured permission.)
 
     ![Dashboard link](images/messaging-08.png)
+    
+    ### IMPORTANT
+
+	Accept the certificate validation by clicking on **ADVANCED**
+	
+	![Advanced Self Signed Certificate](images/self-signed-cert-01.png)
+	
+	Then clicking on **Proceed to console-enmasse-userX.apps.hackathon.openshiftworkshop.com (unsafe)**
+	
+	![Accept Self Signed Certificate](images/self-signed-cert-02.png)
+	
+	You will need to accept up to 4 self signed certificates.
+    
+    Also you will need to **Authorize Access** to the service account.
+    
+    ![Authorize](images/messaging-09b.png)
 
 1. The link will redirect you to the Single Sign On Login Page. Click the **OpenShift** button.
 
