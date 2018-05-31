@@ -99,7 +99,7 @@ Publishing input and receiving from announcement topic!
 
   ![Integration hack one](images/hackone-integration-12.png)
 
-- Add two constants by clicking in the Source column **"+"** of *Constants* drop down menu. 
+- Add a constant by clicking in the Source column **"+"** of *Constants* drop down menu. 
 	- Warning (Type: String)
 
   ![Integration hack one](images/hackone-integration-11.png)
