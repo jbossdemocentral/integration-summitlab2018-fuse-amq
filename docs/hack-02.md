@@ -133,7 +133,7 @@ Search all parking spot with specified rate (Integer)
 
   ![Integration hack two](images/hacktwo-integration-17-1.png)
 
-- On the integration route menu, hover over the **+** sign between last two connection, click on **Add a Connection**
+- On the integration route menu, hover over the **+** sign between last two connection, click on **Add a Step**
 
   ![Integration hack two](images/hacktwo-integration-18.png)
 
