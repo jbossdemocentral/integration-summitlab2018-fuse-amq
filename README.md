@@ -1,4 +1,4 @@
-# L1120 iPaaS Hackathon
+# Fuse and AMQ Hackathon
 
 Welcome to this hackathon. Putting integration solution together used to take days and you will have to have some sort of coding background to successfully put data from various services together. Today, with Red Hat's low code iPaaS platform, we will use the minimum number of codes to achieve maximum integration results! 
 
@@ -51,6 +51,13 @@ We will have ONE single Topic that everyone listen to for announcement!
 ### Working with GUI
 
 Navigate to [http://fuse-\<YOURUSERID\>.apps.fuserhte.openshiftworkshop.com](http://fuse-\<YOURUSERID\>.apps.fuserhte.openshiftworkshop.com) in your browser. This is where you can use to display the result, and places for you to submit input as well.  To interact you will need to pass/retrive data from messaging queues you created in your address space!
+
+To login into both OpenShift console and Fuse Online:
+
+```
+User: \<YOURUSERID\>
+Password: openshift
+```
 
 ![Working with GUI](docs/images/gui.png)
 
