@@ -50,7 +50,7 @@ We will have ONE single Topic that everyone listen to for announcement!
 
 ### Working with GUI
 
-Navigate to [http://www-hackathon-ui-\<YOURUSERID\>.apps.hackahton.openshiftworkshop.com](http://www-hackathon-ui-<YOURUSERID>.apps.hackahton.openshiftworkshop.com) in your browser. This is where you can use to display the result, and places for you to submit input as well.  To interact you will need to pass/retrive data from messaging queues you created in your address space!
+Navigate to [http://fuse-\<YOURUSERID\>.apps.fuserhte.openshiftworkshop.com](http://fuse-\<YOURUSERID\>.apps.fuserhte.openshiftworkshop.com) in your browser. This is where you can use to display the result, and places for you to submit input as well.  To interact you will need to pass/retrive data from messaging queues you created in your address space!
 
 ![Working with GUI](docs/images/gui.png)
 
