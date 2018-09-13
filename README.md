@@ -60,6 +60,7 @@ To login into both OpenShift console and Fuse Online:
 User: \<YOURUSERID\>
 Password: openshift
 ```
+https://master.fuserhte.openshiftworkshop.com/
 
 ![Working with GUI](docs/images/gui.png)
 
