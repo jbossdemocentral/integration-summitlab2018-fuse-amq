@@ -15,172 +15,77 @@ Managing your API
 https://userX-3scale-mt-admin.apps.fuserhte.openshiftworkshop.com/
 ```
  
+### Step 1: Define your API Proxy
 
-- Click on the API on the top right.
-- And click on **+Create Service** also on the top right under API.
-- Give any name to your new API service.
-- Leave everything as default, and click on the **Create Service** button at the bottom of the page.
+- Accept the self-signed certificate if you haven't.
 
-
+    ![fourth-hack](images/hackfour-integration-01.png)
 
 
-- Expand the newly create *notification API service*, and click on **Integration** underneath the titile.
-- Click on *add the base URL of your API and save the configuration.*
-- Copy the URL from your previous hack (Third hack) and place it in *Private Base URL* and click on *Update & test in Staging Environment* button.
+- The first page you will land is the *API Management Dashboard*. Click on the **API** menu link.
+
+    ![01a-dashboard.png](images/01a-dashboard.png)
+
+- This is the *API Overview* page. Here you can take an overview of all your services. Click on the **Integration** link.
+
+    ![02-api-integration.png](images/02-api-integration.png)
+
+- Click on the **edit integration settings** to edit the API settings for the gateway.
+
+    ![03-edit-settings.png](images/03-edit-settings.png)
+
+- Keep select the **APIcast** deployment option in the *Gateway* section.
+
+    ![04-apicast.png](images/04-apicast.png)
+
+- Scroll down and keep the **API Key (user_key)** Authentication.
+
+    ![05-authentication.png](images/05-authentication.png)
+
+- Click on **Update Service**.
+
+- Click on the **add the Base URL of your API and save the configuration** button.
+Scroll down and expand the **MAPPING RULES** section to define the allowed methods on our exposed API.
+
+```
+Private Base URL*
+https://i-YOUR_HACKTHREE_ID.apps.fuserhte.openshiftworkshop.com:443
+
+Staging Public Base URL*
+https://userX-3scale-mt-stage-generic.apps.fuserhte.openshiftworkshop.com:443
+
+Production Public Base URL*
+https://userX-3scale-mt-prod-generic.apps.fuserhte.openshiftworkshop.com:443
+
+```
+- Click on the **Add mapping rule** link
+- Click on the edit icon next to the POST mapping rule.
+
+![fourth-hack](images/hackfour-integration-02.png)
 
 
- 
-- Configure your AMQ Message Broker settings accordingly, all the information should be avaliable in your OSE env, within the Broker's secret setting. 
+- Type in the *Pattern* text box the following: 
 
-   	- Connection *URL : tcp://broker-amq-tcp:61616*
-   	- User Name: *amq*
-   	- Password: *topSecret*
-   	- Check Certificate: *Disable*
-
-- And click **Next** when done. 
-
-- Give any name to your broker connection, and click **create** 
-
-
-- **Create new integration**. Select the **Integration** on the side menu, and click **Create Integration** button on the top right hand corner.
-
-
-- Click on the WebHook Connector.
-
-  ![Integration hack two](images/hackthree-integration-02.png)
-
-- Select *Incoming Webhook* .
-
-  ![Integration hack two](images/hackthree-integration-03.png)
-
-- Click on Next. 
-
-
-- Configure the Output data type,
-  - Select Type: JSON Instance
-  - Definition:
+    ```bash
+    /webhook/<YOUR WEBHOOK CONTENT ROUTE>
     ```
-    {
-      "level": "Warning",
-      "content": {
-        "title": "Tester",
-        "msg": "This is the message for everyone!!"
-      }
-    }
-    ```
-  
-- For end connector setting, and select the  < YOUR_AMQ_MESSAGING_BROKER_CONNECTION >   
+![fourth-hack](images/hackfour-integration-03.png)
 
-- Select *Publish messages action*. 
+- Also under Client -> API test GET request also enter 
 
-  ![Integration hack one](images/hackthree-integration-07.png)
-
-- Configure the name of the queue to listen
-	- Destination Name: notifications
-	- Destination Type: Topic 
-	- Disable persisttent
-
-  ![Integration hack one](images/hackthree-integration-08.png)
-
-- Configure the Output data type,  
-  	- Select Type: JSON Instance
-	- Definition: 
-	
-     ```
-    {
-      "level": "Warning",
-      "content": {
-        "title": "Tester",
-        "msg": "This is the message for everyone!!"
-      }
-    } 
+	```bash
+    /webhook/<YOUR WEBHOOK CONTENT ROUTE>
 	```
-- Click **DONE** and then **Publsih**
+- Click on the *Update & test in Staging Environment*. It is ok if it returns 404 error. Note the user_key in the generated command.
 
-- Give a name to the route and click **Finish**
-- Wait for integration to finish deployment. Once the the integration is fully deployed, you will find an API automatically appear, copy it. *(You can come back to this integration after you are done with the next one.)*
+![fourth-hack](images/hackfour-integration-04.png)
 
-  
-- **Create new integration**. Select the **Integrations** on the side menu, and click on **Create Integration** in the center.
+- Go back to the previous page and click promote. 
 
+![fourth-hack](images/hackfour-integration-05.png)
 
-- Select < YOUR_AMQ_MESSAGING_BROKER_CONNECTION > .
+And you are ready to have the API managed by 3scale. Try testing it by running it with and without the user key 
 
-  ![Integration hack one](images/hackone-integration-02.png)
-
-- Select *subscribe for messages action*. 
-
-  ![Integration hack one](images/hackone-integration-03.png)
-
-- Configure the name of the queue to listen and click *Next*
-	- Destination Name: notifications
-	- Destination Type: Topic 
-
-
-- Configure the Output data type,  
-  	- Select Type: JSON Instance
-	- Definition: 
-		```
-		{
-      "level": "Warning",
-      "content": {
-        "title": "Tester",
-        "msg": "This is the message for everyone!!"
-      }
-    }
-		```
-  
-
-- For end connector setting, and select the  < YOUR_BROKER_CONNECTION >  (**AMQP**) 
-
-- Select *Publish messages action*. 
-
-- Configure the name of the queue to listen
-	- Destination Name: notifications
-	- Destination Type: Topic 
-	- Disable persisttent
-
-  
-
-- Configure the Output data type,  
-  	- Select Type: JSON Instance
-	- Definition: 
-	
-		```
-		{
-		"type": "Success",
-		"header": "Christina",
-		"message": "This is the message for <strong>everyone</strong>!!"
-		}
-		```	
-
-- On the integration route menu, hover over the **+** sign between first and last connection, click on **Add a Step**
-
-
-
-- Select **Data Mapper** Step
-
-
-- Map from Source ->  to Target -> Custom 
-	- content -> msg **to**  message
-	- content -> title **to**  header
-	- content -> level **to**  type
-
-- Click **DONE** and then **Publsih**
-
-- Give a name to the route and click **Finish**
-
-
-
-- Open your terminal window, try entering the follow command to call the API you just established.
-
+```bash
+curl -k -H 'Content-Type: application/json' -d '{ "level": "Warning: "Tester", "msg": "This is the message from API!!!!!"}}' https://userX-3scale-mt-stage-generic.apps.fuserhte.openshiftworkshop.com/webhook/<YOUR WEBHOOK CONTENT ROUTE>?user_key=<YOUR USER ROUTE>
 ```
-curl -k -H 'Content-Type: application/json' -d '{ "level": "Warning", "content": { "title": "API Tester", "msg": "This is the message coming from API!!!!"}}' <YOUR_API_EXTERNAL_URL>
-```
- 
-- Go to your UI, http://www-hackathon-ui-<USER_NAME>.apps.fuserhte.openshiftworkshop.com, and a notification should appear!
-
-![Integration hack three](images/hackthree-integration-.png)
-
-
-- Try a couple of more calls, and you have an **API** exposed using **Fuse Online**!
