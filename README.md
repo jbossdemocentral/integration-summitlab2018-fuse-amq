@@ -152,5 +152,13 @@ To step up, you can also use the following services for follow this [Link](docs/
 
 - Follow the [instructions](docs/hack-02.md) 
 
+### Third Hack
+
+- Follow the [instructions](docs/hack-03.md) 
+
+### Fourth Hack
+
+- Follow the [instructions](docs/hack-04.md) 
+
 ## Off you go 
 Have fun Hacking!
