@@ -5,6 +5,8 @@ Publishing input and receiving from announcement topic!
 ![Working with GUI](images/hack-01-01.png)
 ![Working with GUI](images/hack-01-02.png)
 
+-Create an new project (namespace) userXui
+
 - Add connection for messaging broker for Input queue and announcement topic. Select the **Connections** on the side menu, and click on **Create Connection** button on the top right hand corner.
 
   ![AMQP Connection Setup](images/amqp-connection-01.png)
