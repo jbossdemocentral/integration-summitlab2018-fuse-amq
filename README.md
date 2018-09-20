@@ -50,7 +50,7 @@ We will have ONE single Topic that everyone listen to for announcement!
 
 ### Working with GUI
 
-Go to [this Link](https://docs.google.com/spreadsheets/d/1Y27mtrPC_WHdN32oFzZ_N0qTi4BIPm63yYjTPu2HEQc/edit#gid=0) retrieve an USERID for yourself by placing your name next to column A.  
+Go to [this Link](https://docs.google.com/spreadsheets/d/1EG3ZPQeRNpTngNbE2qQSBBRYNXka6ZF1YOBXOXk8PMA/edit#gid=0) retrieve an USERID for yourself by placing your name next to column A.  
 
 Navigate to [http://fuse-\<YOURUSERID\>.apps.fuserhte.openshiftworkshop.com](http://fuse-\<YOURUSERID\>.apps.fuserhte.openshiftworkshop.com) in your browser. This is where you can use to display the result, and places for you to submit input as well.  To interact you will need to pass/retrive data from messaging queues you created in your address space!
 
