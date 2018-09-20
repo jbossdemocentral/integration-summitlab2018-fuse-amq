@@ -35,9 +35,9 @@ To deploy the application complete the following steps:
 **IMPORTANT!!! MAKE SURE YOU ENTER THE USERNAME/PASSWORD CORRECTLY!!!!**
     ![Configuration 1](images/webapp-03.png)
 
-    Scroll down and fill in the addresses names.
+ Scroll down and fill in the addresses names.
 
-    ![Configuration 2](images/webapp-03b.png)
+ ![Configuration 2](images/webapp-03b.png)
 
 1. In the next screen select **Do not bind at this time**. Click on **Create**.
 
