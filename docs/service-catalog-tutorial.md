@@ -28,7 +28,43 @@ This tutorial walks you through provisioning messaging infrastructure and deploy
 1. Scroll down to the botton, and find the provisioned servives. The address space will be provisioned and may take a few minutes.
 
     ![Provisioning](images/messaging-06.png)
+## Create Application Credentials
 
+Wait for Dashboard on the overview page to appear so you know the depolyment is successful. Now you can provision credentials for your applications. You will need this information when creating the Web Application UI. Follow the next steps to create an app binding.
+
+1. Go to the OpenShift web console. (where you started)
+
+1. Click on **Create Binding** link of the messaging service. Wait a few seconds to let the wizard dialog load completly.
+
+    ![CreateBinding](images/messaging-17.png)
+
+1. Click **Next >**.
+
+    ![Binding](images/messaging-18.png)
+
+1. Select **ALL** the checkboxes and leave the default options. Click **Bind**.
+
+    ![Parameters](images/messaging-19.png)
+
+1. Click **Close** to finish the process.
+
+    ![Results](images/messaging-20.png)
+
+1. Expand the messaging service and click **View Secret** of the newly created binding.
+
+    ![View Secret](images/messaging-21.png)
+
+1. Click **Reveal Secret** to show the credentials and extra information. You will need this information for the Web Application UI.
+
+    ![Reveal Secret](images/messaging-22.png)
+
+1. Take notice of the **externalMessagingHost**, **externalMessagingPort**, **password**, and **username** you will need those values to connect the web application UI to the messaging service.
+
+    **IMPORTANT:**
+    Copy and paste this info or open another it in another tab so you can access it quickly in the next step.
+
+    ![Credentials](images/messaging-23.png)
+    
 ## Configure Addresses
 
 1. Collapse the Service by clicking on the header.
@@ -55,11 +91,7 @@ This tutorial walks you through provisioning messaging infrastructure and deploy
     
     ![Authorize](images/messaging-09b.png)
 
-1. The link will redirect you to the Single Sign On Login Page. Click the **OpenShift** button.
-
-    ![SSO](images/messaging-09.png)
-
-1. This will redirect you to the OpenShift login. Type in your assigned username and password and click the **Log In** button.
+1. The link will redirect you to the Single Sign On Login Page. Use the username and password obtained by last section in secret and click the **Log In** button.
 
     ![Login](images/messaging-10.png)
 
@@ -99,42 +131,7 @@ This tutorial walks you through provisioning messaging infrastructure and deploy
 
     You will be able to create additional addresses if needed.
 
-## Create Application Credentials
 
-Now you are able to provision credentials for your applications. You will need this information when creating the Web Application UI. Follow the next steps to create an app binding.
-
-1. Go to the OpenShift web console. (where you started)
-
-1. Click on **Create Binding** link of the messaging service. Wait a few seconds to let the wizard dialog load completly.
-
-    ![CreateBinding](images/messaging-17.png)
-
-1. Click **Next >**.
-
-    ![Binding](images/messaging-18.png)
-
-1. Select **ALL** the checkboxes and leave the default options. Click **Bind**.
-
-    ![Parameters](images/messaging-19.png)
-
-1. Click **Close** to finish the process.
-
-    ![Results](images/messaging-20.png)
-
-1. Expand the messaging service and click **View Secret** of the newly created binding.
-
-    ![View Secret](images/messaging-21.png)
-
-1. Click **Reveal Secret** to show the credentials and extra information. You will need this information for the Web Application UI.
-
-    ![Reveal Secret](images/messaging-22.png)
-
-1. Take notice of the **externalMessagingHost**, **externalMessagingPort**, **password**, and **username** you will need those values to connect the web application UI to the messaging service.
-
-    **IMPORTANT:**
-    Copy and paste this info or open another it in another tab so you can access it quickly in the next step.
-
-    ![Credentials](images/messaging-23.png)
 
 ## Summary
 

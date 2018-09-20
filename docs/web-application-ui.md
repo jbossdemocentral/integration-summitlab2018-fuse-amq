@@ -7,7 +7,7 @@ You can now deploy the Hackathon UI Web Application. It will become the point of
 Accept the self-signed certificates before using the UI or it won't be able to connect to the backend services. In a browser tab go to the following url. Replace *X* with your actual user number.
 
 ```
-https://messaging-enmasse-userX.apps.hackathon.openshiftworkshop.com 
+https://console-enmasse-userX.apps.fuserhte.openshiftworkshop.com 
 ```
 
 Accept the certificate validation by clicking on **ADVANCED**
@@ -18,7 +18,7 @@ Then clicking on **Proceed to messaging-enmasse-userX.apps.hackathon.openshiftwo
 
 ![Accept Self Signed Certificate](images/self-signed-cert-02.png)
 
-The page will keep on *Waiting for messaging-enmasse-userX.apps.hackathon.openshiftworkshop.com* to load. That's fine it means you are connected to the backend service, but as we are not sending anything back it will stuck like that. You can now close this tab and continue with the rest of the procedure.
+The page will keep on *Waiting for https://console-enmasse-userX.apps.fuserhte.openshiftworkshop.com* to load. That's fine it means you are connected to the backend service, but as we are not sending anything back it will stuck like that. You can now close this tab and continue with the rest of the procedure.
 
 To deploy the application complete the following steps:
 
@@ -32,6 +32,7 @@ To deploy the application complete the following steps:
 
 1. Fill in the connection configuration to the messaging environment. You collected the information in the last step of the previous section: _Create Application Credentials_.Then click on **Next >**.
 
+**IMPORTANT!!! MAKE SURE YOU ENTER THE USERNAME/PASSWORD CORRECTLY!!!!**
     ![Configuration 1](images/webapp-03.png)
 
     Scroll down and fill in the addresses names.
@@ -46,7 +47,7 @@ To deploy the application complete the following steps:
 
     ![Results](images/webapp-05.png)
 
-If you prefer to use the OpenShift CLI issue the following command:
+**OPTIONAL!!!!!!!!** If you prefer to use the OpenShift CLI issue the following command:
 
 ```
 $ oc new-app hackaton-ui -p AMQ_SERVER=<REPLACE-WITH-YOUR-SERVER> -p AMQ_USERNAME=<REPLACE-WITH-USERNAME> -p AMQ_PASSWORD=<REPLACE-WITH-PASSWORD>

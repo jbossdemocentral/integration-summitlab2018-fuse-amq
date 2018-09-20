@@ -134,7 +134,7 @@ Publishing input and receiving from announcement topic!
 	The page will keep on *Waiting for messaging-enmasse-userX.apps.hackathon.openshiftworkshop.com* to load. That's fine it means you are connected to the backend service, but as we are not sending anything back it will stuck like that. You can now close this tab and continue with the rest of the procedure.
 
 
-- Go to your UI, *http://www-hackathon-ui-\<USER_NAME\>.apps.hackathon.openshiftworkshop.com/*, in the input panel, 
+- Go to your UI, *http://www-hackathon-ui-\<USER_NAME\>.apps.fuserhte.openshiftworkshop.com/*, in the input panel, 
 	- Tyoe: Announcement
 	- Titles: < YOUR_NAME >
 	- Text: Hello

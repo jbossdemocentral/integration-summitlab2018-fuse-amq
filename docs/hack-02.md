@@ -153,7 +153,7 @@ Search all parking spot with specified rate (Integer)
 
   ![Integration hack two](images/hacktwo-integration-22.png)
 
-- Go to your UI, http://www-hackathon-ui-<USER_NAME>.apps.hackathon.openshiftworkshop.com, in the input panel enter: 
+- Go to your UI, http://www-hackathon-ui-<USER_NAME>.apps.fuserhte.openshiftworkshop.com, in the input panel enter: 
  	- Type: Location, 
 	- Title: Parking less than 4 dollars
 	- Text: 4
