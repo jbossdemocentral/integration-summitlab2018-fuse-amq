@@ -128,6 +128,18 @@ Inputs are collected and formatted into a messaging broker queue ready for you t
 
 ## LAB Instructions
 
+Navigate to [http://fuse-\<YOURUSERID\>.apps.fuserhte.openshiftworkshop.com](http://fuse-\<YOURUSERID\>.apps.fuserhte.openshiftworkshop.com) in your browser. This is where you can use to display the result, and places for you to submit input as well.  To interact you will need to pass/retrive data from messaging queues you created in your address space!
+
+To login into both OpenShift console and Fuse Online:
+
+```
+User: \<YOURUSERID\>
+Password: openshift
+```
+
+#### MASTER CONSOLE URL
+https://master.fuserhte.openshiftworkshop.com/
+
 ### Configure Broker
 
 To provision messaging service infrastructure by following the [instructions](docs/service-catalog-tutorial.md). 
