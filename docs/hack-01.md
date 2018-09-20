@@ -122,7 +122,7 @@ Publishing input and receiving from announcement topic!
 	Accept the self-signed certificates before using the UI or it won't be able to connect to the backend services. In a browser tab go to the following url. Replace *X* with your actual user number.
 
 	```
-	https://messaging-enmasse-userX.apps.hackathon.openshiftworkshop.com 
+	https://messaging-enmasse-userX.apps.fuserhte.openshiftworkshop.com
 	```
 
 	Accept the certificate validation by clicking on **ADVANCED**
